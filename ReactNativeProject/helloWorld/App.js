@@ -4,7 +4,7 @@ import PersonalizedForm from './src/screens/PersonalizedForm/PersonalizedForm';
 
 export default function App() {
   return (
-    // <Login />
-    <PersonalizedForm />
+    <Login />
+    // <PersonalizedForm />
   );
 }
