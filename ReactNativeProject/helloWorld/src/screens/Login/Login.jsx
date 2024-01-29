@@ -54,7 +54,6 @@ const styles = StyleSheet.create({
         flexDirection: 'column',
         alignItems: 'center',
         justifyContent: 'center',
-        // backgroundColor: 'blue'
     },
     loginImage: {
         height: 125,
@@ -64,8 +63,7 @@ const styles = StyleSheet.create({
         width: 96,
         height: 179,
         alignItems: 'center',
-        justifyContent: 'space-between',
-        // backgroundColor: 'blue',
+        justifyContent: 'space-between'
     },
     loginTitle: {
         fontSize: 23,
@@ -73,7 +71,6 @@ const styles = StyleSheet.create({
         textTransform: 'uppercase'
     },
     input: {
-        // width: '80%',
         width: '86%',
         fontSize: 23,
         fontFamily: 'JosefinSans_700Bold',
@@ -87,10 +84,6 @@ const styles = StyleSheet.create({
 
         width: '100%',
         marginTop: '15%',
-        // height: 280,
-        // marginBottom: 50
-
-        // backgroundColor: 'red'
     },
     button: {
         width: '86%',
