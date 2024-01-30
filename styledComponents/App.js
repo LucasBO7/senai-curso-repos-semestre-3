@@ -1,63 +1,121 @@
 import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
+import { Container } from './src/components/Container/Container';
+import { Title, TitleBtnReset, TitleBtnIncrement, TitleBtnDecrement } from './src/components/Title/Title';
+import { BtnDecrement, BtnIncrement, BtnReset } from './src/components/Buttons/Buttons';
+
+import { useFonts, Orbitron_400Regular } from '@expo-google-fonts/orbitron';
 
 export default function App() {
   // hook de state
   const [count, setCount] = useState(0);
 
+  // Time states
+  const [hourCount, setHourCount] = useState(0);
+  const [minuteCount, setMinuteCount] = useState(0);
+  const [secondCount, setSecondCount] = useState(0);
+
   // função para incremento
   const increment = () => {
     setCount(count + 1);
+
+    // XX:58:59
+    if (secondCount == 59 && minuteCount < 59) {
+      setMinuteCount(minuteCount + 1);
+      setSecondCount(0);
+      // XX:59:00
+    } else {
+      // 23:59:59
+      if (secondCount == 59 && minuteCount == 59 && hourCount < 24) {
+        setHourCount(hourCount + 1);
+        setMinuteCount(0);
+        setSecondCount(0);
+        // 24:00:00
+      } else {
+        console.warn('Aumentar segundo');
+        setSecondCount(secondCount + 1);
+      }
+    }
   }
 
   const decrement = () => {
-    setCount(count - 1);
+    if (count > 0) {
+      setCount(count - 1);
+
+      // ================ PASSA OS VALORES PARA O RELÓGIO DIGITAL ================
+      // 24:00:00
+      if (hourCount < 24 && minuteCount == 0 && secondCount == 0) {
+        setHourCount(hourCount - 1);
+        setMinuteCount(59);
+        setSecondCount(59);
+      } else {
+        // XX:59:00
+        if (minuteCount < 59 && secondCount == 0) {
+          setMinuteCount(minuteCount - 1);
+          setSecondCount(59);
+        } else {
+          if (minuteCount < 59 && secondCount <= 59) {
+            setSecondCount(secondCount - 1);
+          }
+        }
+      }
+    }
+
+
   }
 
   const reset = () => {
     setCount(0);
+    setHourCount(0);
+    setMinuteCount(0);
+    setSecondCount(0);
   }
 
   useEffect(() => {
-    console.log(`Contador atualizado: ${count}`);
-  }, count)
+    console.warn(`Contador atualizado: ${count}`);
+  }, [count])
+
+  //#region FontLoading
+  let [fontsLoaded, fontError] = useFonts({
+    Orbitron_400Regular,
+  });
+  if (!fontsLoaded && !fontError) {
+    return null;
+  }
+  //#endregion
 
   return (
-    <View style={styles.container}>
+    <Container style={styles.container}>
       <View style={styles.countContainer}>
-        <Text style={styles.title}>Contador</Text>
+
+        <Image style={styles.clockImg} source={require('./src/images/clock.png')} />
+        <Text style={styles.clockHour}>{hourCount < 10 ? `0${hourCount}` : hourCount}</Text>
+        <Text style={styles.clockMinute}>{minuteCount < 10 ? `0${minuteCount}` : minuteCount}</Text>
+        <Text style={styles.clockSecond}>{secondCount < 10 ? `0${secondCount}` : secondCount}</Text>
+
+        <Title>Contador</Title>
         <Text style={styles.countNumber}>{count}</Text>
 
-        <TouchableOpacity style={styles.resetButton} onPress={reset}>
-          <Text>Zerar</Text>
-        </TouchableOpacity>
+        <BtnReset onPress={reset}>
+          <TitleBtnReset>Zerar</TitleBtnReset>
+        </BtnReset>
 
-        <TouchableOpacity style={styles.incrementButton} onPress={increment}>
-          <Text>Incrementar</Text>
-        </TouchableOpacity>
+        <BtnIncrement onPress={increment}>
+          <TitleBtnIncrement>Incrementar</TitleBtnIncrement>
+        </BtnIncrement>
 
-        <TouchableOpacity style={styles.decrementButton} onPress={decrement}>
-          <Text>Decrementar</Text>
-        </TouchableOpacity>
+        <BtnDecrement onPress={decrement}>
+          <TitleBtnDecrement>Decrementar</TitleBtnDecrement>
+        </BtnDecrement>
       </View>
 
       <StatusBar style='auto' />
-    </View>
+    </Container>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-  title: {
-    fontSize: 25,
-    fontWeight: 'bold'
-  },
   countContainer: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -71,21 +129,33 @@ const styles = StyleSheet.create({
     color: '#8E49FF',
     marginBottom: 20
   },
-  resetButton: {
-    padding: 25,
-    paddingVertical: 10
+  clockImg: {
+    width: 250,
+    height: 100
   },
-  incrementButton: {
-    backgroundColor: '#EBFFBF',
-    padding: 25,
-    paddingVertical: 15,
-    borderRadius: 5,
-    marginBottom: 10,
+  clockSecond: {
+    color: 'red',
+    fontFamily: 'Orbitron_400Regular',
+    fontSize: 30,
+    position: 'absolute',
+    top: 45,
+    right: 60,
   },
-  decrementButton: {
-    backgroundColor: '#FFBFBF',
-    padding: 25,
-    paddingVertical: 15,
-    borderRadius: 5,
+  clockMinute: {
+    color: 'red',
+    fontFamily: 'Orbitron_400Regular',
+    fontSize: 30,
+    position: 'absolute',
+    top: 45,
+    right: 135,
+  },
+  clockHour: {
+    color: 'red',
+    fontFamily: 'Orbitron_400Regular',
+    fontSize: 30,
+    position: 'absolute',
+    top: 45,
+    left: 60,
   }
 });
+// É nos tempos difíceis que nos tornamos fortes
