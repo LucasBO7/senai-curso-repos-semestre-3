@@ -12,29 +12,35 @@ export default function App() {
   const [count, setCount] = useState(0);
 
   // Time states
-  const [hourCount, setHourCount] = useState(0);
-  const [minuteCount, setMinuteCount] = useState(0);
-  const [secondCount, setSecondCount] = useState(0);
+  const [hourCount, setHourCount] = useState(23);
+  const [minuteCount, setMinuteCount] = useState(59);
+  const [secondCount, setSecondCount] = useState(50);
 
   // função para incremento
   const increment = () => {
     setCount(count + 1);
 
-    // XX:58:59
-    if (secondCount == 59 && minuteCount < 59) {
-      setMinuteCount(minuteCount + 1);
+    if (hourCount == 24) {
+      setHourCount(0);
+      setMinuteCount(0);
       setSecondCount(0);
-      // XX:59:00
     } else {
-      // 23:59:59
-      if (secondCount == 59 && minuteCount == 59 && hourCount < 24) {
-        setHourCount(hourCount + 1);
-        setMinuteCount(0);
+      // XX:58:59
+      if (secondCount == 59 && minuteCount < 59) {
+        setMinuteCount(minuteCount + 1);
         setSecondCount(0);
-        // 24:00:00
+        // XX:59:00
       } else {
-        console.warn('Aumentar segundo');
-        setSecondCount(secondCount + 1);
+        // 23:59:59
+        if (secondCount == 59 && minuteCount == 59 && hourCount < 24) {
+          setHourCount(hourCount + 1);
+          setMinuteCount(0);
+          setSecondCount(0);
+          // 24:00:00
+        } else {
+          console.warn('Aumentar segundo');
+          setSecondCount(secondCount + 1);
+        }
       }
     }
   }
@@ -55,14 +61,18 @@ export default function App() {
           setMinuteCount(minuteCount - 1);
           setSecondCount(59);
         } else {
+          // XX:58:59
           if (minuteCount < 59 && secondCount <= 59) {
             setSecondCount(secondCount - 1);
+          } else {
+            if (secondCount == 59 && minuteCount == 59 && hourCount < 24) {
+              setMinuteCount(minuteCount - 1);
+              setSecondCount(secondCount - 1);
+            }
           }
         }
       }
     }
-
-
   }
 
   const reset = () => {
