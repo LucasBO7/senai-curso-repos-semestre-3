@@ -5,6 +5,8 @@ export const HeaderContainer = styled.View`
     background-color: #FECC2B;
     height: 20%;
     border-radius: 0 0 15px 15px;
+
+    /* box-shadow para android */
     elevation: 10;
     shadowColor: #000000;
 `

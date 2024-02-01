@@ -1,10 +1,23 @@
-import { BoxInput, InputBar, InputLabel } from "./style";
+import { InputText } from "./style";
 
-export function Input({ labelText }) {
+export const Input = ({
+    placeholder,
+    editable,
+    fieldValue,
+    onChangingText,
+    keyType,
+    maxLength
+}) => {
     return (
-        <BoxInput>
-            <InputLabel>{labelText}</InputLabel>
-            <InputBar></InputBar>
-        </BoxInput>
-    );
+        <>
+            <InputText
+                placeholder={placeholder}
+                editable={editable}
+                keyboardType={keyType}
+                maxLength={maxLength}
+                value={fieldValue}
+                onChangeText={onChangingText}
+            />
+        </>
+    )
 }

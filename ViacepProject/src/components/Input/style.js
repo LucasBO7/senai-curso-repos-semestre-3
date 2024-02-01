@@ -1,11 +1,16 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components"
 
-export const BoxInput = styled.View`
-    
-`
-export const InputLabel = styled.Text`
+export const InputText = styled.TextInput`
+    border: 2px solid #A1A1A1;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    width: 100%;
+    font-size: 18px;
+    font-family: 'Roboto_500Medium';
 
-`
-export const InputBar = styled.Input`
-    border: 1px solid #A1A1A1;
+    ${props => props.editable && css`
+        background-color: #f6f6f6;
+    `}
 `

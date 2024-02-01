@@ -1,12 +1,11 @@
-import { StyleSheet, StatusBar } from 'react-native';
-import { useFonts, Roboto_500Medium } from '@expo-google-fonts/roboto';
-import { Roboto_700Bold } from '@expo-google-fonts/roboto';
+import { StatusBar, ScrollView } from 'react-native';
+import { useFonts, Roboto_500Medium, Roboto_700Bold } from '@expo-google-fonts/roboto';
 import { ContainerApp } from './style';
 import { Header } from './src/components/Header';
-import { Input } from './src/components/Input';
+import { Home } from './src/screens/Home';
 
 export default function App() {
-  let [fontsLoaded, fontError] = useFonts({
+  const [fontsLoaded, fontError] = useFonts({
     Roboto_500Medium,
     Roboto_700Bold
   });
@@ -16,18 +15,15 @@ export default function App() {
 
   return (
     <ContainerApp>
-      <StatusBar style="auto" />
+      <StatusBar barStyle={'default'} />
 
       {/* HEADER */}
       <Header />
 
       {/* HOMESCREEN */}
-      <Input />
-
-
+      <ScrollView>
+        <Home />
+      </ScrollView>
     </ContainerApp>
   );
 }
-
-const styles = StyleSheet.create({
-});
