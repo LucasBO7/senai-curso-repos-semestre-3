@@ -18,7 +18,7 @@ export const HeaderContent = styled.SafeAreaView`
 `
 
 export const TextHeader = styled.Text`
-    font-size: 24;
+    font-size: 24px;
     font-family: 'Roboto_500Medium';
     color: #333E33;
 `

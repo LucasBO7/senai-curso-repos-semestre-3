@@ -2,7 +2,7 @@ import styled, { css } from "styled-components"
 
 export const InputText = styled.TextInput`
     border: 2px solid #A1A1A1;
-    text-align: center;
+    text-align: left;
     padding: 20px;
     border-radius: 10px;
     margin-top: 10px;
