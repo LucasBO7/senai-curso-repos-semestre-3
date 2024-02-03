@@ -10,7 +10,7 @@ export const BoxInput = ({
     textLabel,
     placeholder,
     fieldValue = null,
-    onChangeText = null,
+    onChangeText,
     keyType = 'default',
     maxLength
 }) => {

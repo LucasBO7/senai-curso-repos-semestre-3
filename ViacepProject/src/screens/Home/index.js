@@ -1,16 +1,16 @@
+import React from 'react';
 import { ScrollForm, ContainerForm } from "./style";
 import { BoxInput } from "../../components/BoxInput";
 import { FieldContentRow } from "../../components/BoxInput/style";
 // import axios from "axios";
 import { useEffect, useState } from "react";
-import { StyleSheet, Text } from "react-native";
+import api from '../../services/Services';
 
 export function Home() {
     // States - variáveis
-    const [cep, setCep] = useState();
-    // https://192.168.19.142:3000/cep
 
-    const [address, setAdress] = useState({
+    const [address, setAddress] = useState({
+        cep: '',
         logradouro: null,
         bairro: null,
         cidade: null,
@@ -19,24 +19,40 @@ export function Home() {
     });
 
 
+
+    // https://192.168.19.142:3000/cep
+
     // useEffect - funções
     useEffect(() => {
-        console.warn(address.cep);
+        if (address.cep.length === 8) {
+            console.warn('Método executado!');
+            getAddressInfos();
+        }
     }, [address.cep])
 
 
     // Send a POST request
-    //#region post
-    // axioss({
-    //     method: 'get',
-    //     url: `viacep.com.br/ws/:${cep}/json/`,
-    //     data: {
-    //         firstName: 'Fred',
-    //         lastName: 'Flintstone'
-    //     }
-    // });
-    //#endregion
+    async function getAddressInfos() {
+        try {
+            const promise = await api.get(`https://viacep.com.br/ws/${address.cep}/json/`);
+            setAddress({
+                ...address,
+                logradouro: promise.data.logradouro,
+                bairro: promise.data.bairro,
+                cidade: promise.data.localidade,
+                estado: promise.data.uf,
+                uf: promise.data.uf,
+            });
+            console.warn('Salvo!');
+        } catch (error) {
+            console.log('UM ERRO OCORREU!');
+        }
+    }
 
+    // Recebe as alterações no Input do CEP e as guarda no state "address"
+    const handleCpfTextChanged = (event) => {
+        setAddress({ ...address, cep: event });
+    };
 
     return (
         <ScrollForm>
@@ -48,29 +64,25 @@ export function Home() {
                     editable={true}
                     keyType="numeric"
                     maxLength={9}
-                    onChangeText={(c) => {
-                        setAdress((prevState) => ({
-                            ...prevState,
-                            cep: c
-                        }))
-                    }}
+                    onChangeText={event => { handleCpfTextChanged(event) }}
                 />
-
-                <Text>Teste: {address.cep}</Text>
 
                 <BoxInput
                     textLabel='Logradouro'
                     placeholder='Logradouro...'
+                    fieldValue={address.cep}
                 />
 
                 <BoxInput
                     textLabel='Bairro'
                     placeholder='Bairro...'
+                    fieldValue={address.bairro}
                 />
 
                 <BoxInput
                     textLabel='Cidade'
                     placeholder='Cidade...'
+                    fieldValue={address.cidade}
                 />
 
                 <FieldContentRow>
@@ -79,12 +91,14 @@ export function Home() {
                         placeholder='Estado...'
                         fieldWidth={60}
                         direction={'row'}
+                        fieldValue={address.estado}
                     />
 
                     <BoxInput
                         textLabel='UF'
                         placeholder='UF'
                         fieldWidth={30}
+                        fieldValue={address.uf}
                     />
                 </FieldContentRow>
             </ContainerForm>

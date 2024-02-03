@@ -4,7 +4,7 @@ export const Input = ({
     placeholder,
     editable,
     fieldValue,
-    onChangingText,
+    onChangeText,
     keyType,
     maxLength
 }) => {
@@ -16,7 +16,7 @@ export const Input = ({
                 keyboardType={keyType}
                 maxLength={maxLength}
                 value={fieldValue}
-                onChangeText={onChangingText}
+                onChangeText={onChangeText}
             />
         </>
     )
