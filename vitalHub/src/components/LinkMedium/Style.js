@@ -7,4 +7,5 @@ export const LinkMedium = styled.Text`
     color: #8C8A97;
     align-self: flex-start;
     margin-left: 5%;
+    margin-bottom: 22px;
 `;
