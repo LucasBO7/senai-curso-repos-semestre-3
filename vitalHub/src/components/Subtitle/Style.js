@@ -8,3 +8,8 @@ export const Subtitle = styled.Text`
     text-align: center;
     margin-bottom: 24px;
 `;
+
+export const HighlightedText = styled(Subtitle).attrs({})`
+    font-family: 'Quicksand_600SemiBold';
+    color: #496BBA;
+`;

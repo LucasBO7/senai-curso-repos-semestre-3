@@ -8,9 +8,29 @@ export const Navegacao = ({ navigation }) => {
                 // Ao ser pressionado, navega para a screen "Login"
                 onPress={() => { navigation.navigate("Login") }} />
             <Button
-                title="RecuperarSenha"
+                title="Recuperar a Senha"
                 // Ao ser pressionado, navega para a screen "Login"
                 onPress={() => { navigation.navigate("RecuperarSenha") }} />
+            <Button
+                title="Verificação de Email"
+                // Ao ser pressionado, navega para a screen "Login"
+                onPress={() => { navigation.navigate("VerificacaoEmail") }} />
+            <Button
+                title="Redefinição de Senha"
+                // Ao ser pressionado, navega para a screen "Login"
+                onPress={() => { navigation.navigate("RedefinicaoSenha") }} />
+            <Button
+                title="Cadastro de Conta"
+                // Ao ser pressionado, navega para a screen "Login"
+                onPress={() => { navigation.navigate("CadastroConta") }} />
+            <Button
+                title="Consultas do Médico"
+                // Ao ser pressionado, navega para a screen "Login"
+                onPress={() => { navigation.navigate("ConsultasMedico") }} />
+            <Button
+                title="Perfil"
+                // Ao ser pressionado, navega para a screen "Login"
+                onPress={() => { navigation.navigate("Perfil") }} />
         </View>
     );
 }

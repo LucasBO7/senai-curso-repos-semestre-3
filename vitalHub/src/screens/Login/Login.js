@@ -3,7 +3,7 @@ import { Container } from '../../components/Container/Style';
 import { Logo } from '../../components/Logo/Style';
 import { Title } from '../../components/Title/Style';
 import { Input } from '../../components/Input/Style';
-import { LinkMedium } from '../../components/LinkMedium/Style';
+import { LinkMedium } from '../../components/Link/Style';
 import { AntDesign } from '@expo/vector-icons';
 import { ContextAccount, LinkBold, TextAccount } from '../../components/ContextAccount/Style';
 import { Button, ButtonGoogle, ButtonTitle, ButtonTitleGoogle } from '../../components/Button/Style';
