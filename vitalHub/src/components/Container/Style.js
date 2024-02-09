@@ -12,5 +12,30 @@ export const InputNumberContainer = styled.View`
     gap: 20px;
 `;
 
-export const PerfilInputContainer = styled.View`
+export const PerfilCityInputsContainer = styled.View`
+    flex-direction: row;
+    width: 90%;
+    justify-content: space-between;
+`;
+
+export const PerfilInfoContainer = styled.View`
+    z-index: 2;
+    position: absolute;
+    top: 230px;
+
+    width: 289px;
+    height: 100px;
+
+    background-color: white;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    shadowColor: '#000';
+    shadowOffset: {
+      width: 0;
+      height: 2;
+    };
+    shadowOpacity: 0.25;
+    shadowRadius: 3.84;
+    elevation: 5;
 `;

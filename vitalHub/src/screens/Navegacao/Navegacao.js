@@ -31,6 +31,10 @@ export const Navegacao = ({ navigation }) => {
                 title="Perfil"
                 // Ao ser pressionado, navega para a screen "Login"
                 onPress={() => { navigation.navigate("Perfil") }} />
+            <Button
+                title="Prontuário"
+                // Ao ser pressionado, navega para a screen "Login"
+                onPress={() => { navigation.navigate("Prontuario") }} />
         </View>
     );
 }

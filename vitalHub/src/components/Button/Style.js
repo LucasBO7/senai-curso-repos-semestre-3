@@ -33,7 +33,8 @@ export const ButtonTitleGoogle = styled(ButtonTitle).attrs({})`
     margin-left: 10px;
 `;
 
-// export const ButtonImage = styled.Image`
-//     width: 16px;
-//     height: 20px;
-// `;
+// Botão Sair do App
+export const ButtonClose = styled(Button).attrs({})`
+    background-color: #ACABB7;
+    width: 59%;
+`;

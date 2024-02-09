@@ -10,6 +10,7 @@ import RedefinicaoSenha from './src/screens/RedefinicaoSenha/RedefinicaoSenha';
 import CadastroConta from './src/screens/CadastroConta/CadastroConta';
 import ConsultasMedico from './src/screens/ConsultasMedico/ConsultasMedico';
 import Perfil from './src/screens/Perfil/Perfil';
+import { Prontuario } from './src/screens/Prontuario/Prontuario';
 
 const Stack = createNativeStackNavigator();
 
@@ -74,6 +75,11 @@ export default function App() {
           name="Perfil"
           component={Perfil}
           options={{ title: "Perfil" }}
+        />
+        <Stack.Screen
+          name="Prontuario"
+          component={Prontuario}
+          options={{ title: "Prontuario" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

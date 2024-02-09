@@ -1,17 +1,60 @@
 import React from 'react'
 import { PerfilImage } from '../../components/PerfilImage/Style'
-import { Container, PerfilInputContainer } from '../../components/Container/Style'
-import { PerfilInput, PerfilInputLabel } from '../../components/Input/Style'
+import { Container, PerfilCityInputsContainer, PerfilInfoContainer } from '../../components/Container/Style'
+import { PerfilInput } from '../../components/PerfilInput/index'
+import { Button, ButtonClose, ButtonTitle } from '../../components/Button/Style'
+import { ScrollView } from 'react-native'
+import { PerfilEmail, PerfilName } from '../../components/Title/Style'
 
 export default function Perfil() {
     return (
-        <Container>
-            <PerfilImage source={require('../../assets/perfil-img.png')} />
+        <ScrollView>
+            <Container>
+                <PerfilImage source={require('../../assets/perfil-img.png')} />
+                
+                <PerfilInfoContainer>
+                    <PerfilName>Perfil Kosta</PerfilName>
+                    <PerfilEmail>richard.kosta@gmail.com</PerfilEmail>
+                </PerfilInfoContainer>
 
-            <PerfilInputContainer>
-                <PerfilInputLabel>Data de nascimento:</PerfilInputLabel>
-                <PerfilInput placeholder="04/15/2022" />
-            </PerfilInputContainer>
-        </Container>
+                <PerfilInput
+                    inputLabel="Data de nascimento"
+                    inputPlaceholder="04/15/1999"
+                    containerWidth="90%"
+                    inputType={"numeric"} />
+                <PerfilInput
+                    inputLabel="CPF"
+                    inputPlaceholder="859********"
+                    containerWidth="90%"
+                    inputType={"numeric"} />
+                <PerfilInput
+                    inputLabel="Endereço"
+                    inputPlaceholder="Rua Vicente Silva, 987"
+                    containerWidth="90%" />
+
+                <PerfilCityInputsContainer>
+                    <PerfilInput
+                        inputLabel="Cep"
+                        inputPlaceholder="06548-909"
+                        containerWidth="40%" />
+                    <PerfilInput
+                        inputLabel="Cidade"
+                        inputPlaceholder="Moema-SP"
+                        containerWidth="40%" />
+                </PerfilCityInputsContainer>
+
+                <Button>
+                    <ButtonTitle>Salvar</ButtonTitle>
+                </Button>
+
+                <Button>
+                    <ButtonTitle>Editar</ButtonTitle>
+                </Button>
+
+                <ButtonClose>
+                    <ButtonTitle>Editar</ButtonTitle>
+                </ButtonClose>
+            </Container>
+        </ScrollView>
     )
 }
