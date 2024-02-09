@@ -12,6 +12,7 @@ export const InputNumberContainer = styled.View`
     gap: 20px;
 `;
 
+<<<<<<< HEAD
 export const PerfilCityInputsContainer = styled.View`
     flex-direction: row;
     width: 90%;
@@ -38,4 +39,11 @@ export const PerfilInfoContainer = styled.View`
     shadowOpacity: 0.25;
     shadowRadius: 3.84;
     elevation: 5;
+=======
+export const PerfilInputContainer = styled.View`
+`;
+
+export const PerfilInputCidadeContainer = styled.View`
+    flex-direction: row;
+>>>>>>> b71b10770e8af2d725a0152f350bd7f09313b8bf
 `;
