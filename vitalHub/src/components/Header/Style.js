@@ -1,12 +1,17 @@
+import { LinearGradient } from "expo-linear-gradient";
 import styled from "styled-components";
 
 export const Header = styled.View`
-    background-color: red;
-    width: 130px;
-    height: 100px;
+    flex: 1;
 `;
 
-export const HeaderContent = styled.View`
+export const HeaderContent = styled(LinearGradient).attrs({
+    colors: ['#60BFC5', '#496BBA'],
+    start: { x: 0, y: 1 },
+    end: { x: 1, y: 1 },
+    locations: [0, 1],
+})`
+    height: 20%;
 `;
 
 export const UserImage = styled.Image`

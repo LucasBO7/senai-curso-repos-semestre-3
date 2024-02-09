@@ -32,7 +32,7 @@ export const PerfilInputLabel = styled.Text`
     font-size: 16px;
 `;
 
-export const PerfilInput = styled.TextInput`
+export const PerfilInput = styled.TextInput.attrs()`
     background-color: #F5F3F3;
     color: #33303E;
     width: 100%;

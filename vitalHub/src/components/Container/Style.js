@@ -14,3 +14,7 @@ export const InputNumberContainer = styled.View`
 
 export const PerfilInputContainer = styled.View`
 `;
+
+export const PerfilInputCidadeContainer = styled.View`
+    flex-direction: row;
+`;
