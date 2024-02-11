@@ -25,19 +25,4 @@ export const InputNumber = styled(Input).attrs({
     font-family: 'Quicksand_600SemiBold';
     font-size: 40px;
     line-height: 52px;
-<<<<<<< HEAD
-=======
-`;
-
-export const PerfilInputLabel = styled.Text`
-    font-family: 'Quicksand_600SemiBold';
-    font-size: 16px;
-`;
-
-export const PerfilInput = styled.TextInput.attrs()`
-    background-color: #F5F3F3;
-    color: #33303E;
-    width: 100%;
-    height: 53px;
->>>>>>> b71b10770e8af2d725a0152f350bd7f09313b8bf
 `;

@@ -12,9 +12,9 @@ export const LinkMedium = styled.Text`
 
 // Botão link
 export const LinkSecondary = styled(LinkMedium).attrs({})`
-    background-color: transparent;
     font-family: 'MontserratAlternates_600SemiBold';
-    align-self: center;
-    padding: 15px;
     color: #344F8F;
+    align-self: center;
+    margin-left: 0;
+    padding: 15px;
 `;

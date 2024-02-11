@@ -34,7 +34,7 @@ export const ButtonTitleGoogle = styled(ButtonTitle).attrs({})`
 `;
 
 // Botão Sair do App
-export const ButtonClose = styled(Button).attrs({})`
+export const ButtonSecondary = styled(Button).attrs({})`
     background-color: #ACABB7;
-    width: 59%;
+    width: ${props => props.btnWidth || '100%'};
 `;
