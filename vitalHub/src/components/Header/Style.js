@@ -1,7 +1,7 @@
 import { LinearGradient } from "expo-linear-gradient";
 import styled from "styled-components";
 
-export const Header = styled.View`
+export const HeaderContainer = styled.View`
     flex: 1;
 `;
 

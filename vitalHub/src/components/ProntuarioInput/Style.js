@@ -22,5 +22,4 @@ export const ProntuarioInputBox = styled.TextInput.attrs({ placeholderTextColor:
     padding: 22px 17px;
 
     flex: 1;
-    textAlignVertical: 'top';
 `;

@@ -20,6 +20,10 @@ export const PerfilEmail = styled.Text`
     color: #4E4B59;
 `;
 
+export const PatientName = styled(PerfilName)`
+    margin-bottom: 5px;
+`;
+
 // export const NomePaciente = styled.Text`
 //     font-family: 'MontserratAlternates_600SemiBold';
 //     font-size: 20px;
