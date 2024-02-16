@@ -14,6 +14,7 @@ export const HeaderContainer = styled(LinearGradient).attrs({
   height: 144px;
   justify-content: center;
   align-items: center;
+  border-radius: 0 0 20px 20px;
 `;
 
 // Header Container -> (Header Content)
