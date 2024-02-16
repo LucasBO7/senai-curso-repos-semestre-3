@@ -1,9 +1,9 @@
 import React from 'react'
-import { HeaderContainer, HeaderContent, TitlesContainer, UserImage, UserNameTitle, WelcomeTitle } from './Style.js';
+import { Header, HeaderContent, TitlesContainer, UserImage, UserNameTitle, WelcomeTitle } from './Style.js';
 
-export default function Header() {
+export default function index() {
     return (
-        <HeaderContainer>
+        <Header>
             <HeaderContent>
                 <UserImage />
 
@@ -12,6 +12,6 @@ export default function Header() {
                     <UserNameTitle>Dr.Claudio</UserNameTitle>
                 </TitlesContainer>
             </HeaderContent>
-        </HeaderContainer >
+        </Header >
     )
 }

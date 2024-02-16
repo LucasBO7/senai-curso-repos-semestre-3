@@ -39,23 +39,3 @@ export const PerfilInfoContainer = styled.View`
     shadowRadius: 3.84;
     elevation: 5;
 `;
-
-export const QueryStatusContainer = styled.View`
-    width: 100%;
-    flex-direction: row;
-    justify-content: space-between;
-`;
-
-export const QueryContainer = styled.View`
-    flex-direction: row;
-    width: 100%;
-    height: 102px;
-    /* background-color: greenyellow; */
-`;
-
-export const PatientInfosContainer = styled.View`
-`;
-
-export const PatientCategoriesContainer = styled.View`
-    flex-direction: row;
-`;
