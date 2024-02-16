@@ -5,6 +5,7 @@ import { PerfilInput } from '../../components/PerfilInput/index'
 import { Button, ButtonSecondary, ButtonTitle } from '../../components/Button/Style'
 import { ScrollView } from 'react-native'
 import { PerfilEmail, PerfilName } from '../../components/Title/Style'
+import { Footer } from '../../components/Footer'
 
 export default function Perfil() {
     return (
@@ -54,6 +55,8 @@ export default function Perfil() {
                 <ButtonSecondary btnWidth="59%">
                     <ButtonTitle>Editar</ButtonTitle>
                 </ButtonSecondary>
+
+                {/* <Footer /> */}
             </Container>
         </ScrollView>
     )
