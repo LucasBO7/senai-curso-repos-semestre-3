@@ -1,28 +1,31 @@
-import React from 'react';
-import { Container } from '../../components/Container/Style';
-import { Logo } from '../../components/Logo/Style';
-import { Title } from '../../components/Title/Style';
-import { Subtitle } from '../../components/Subtitle/Style';
-import { Input } from '../../components/Input/Style';
-import { Button, ButtonTitle } from '../../components/Button/Style';
-import { ReturnButton } from '../../components/ReturnButton/index';
+import React from "react";
+import { Container } from "../../components/Container/Style";
+import { Logo } from "../../components/Image/Style";
+import { Title } from "../../components/Title/Style";
+import { Subtitle } from "../../components/Subtitle/Style";
+import { Input } from "../../components/Input/Style";
+import { Button, ButtonTitle } from "../../components/Button/Style";
+import { ReturnButton } from "../../components/ReturnButton/index";
 
 export default function RecuperarSenha() {
-    return (
-        <Container>
-            <ReturnButton iconName='arrowleft' />
+  return (
+    <Container>
+      <ReturnButton iconName="arrowleft" />
 
-            <Logo source={require('../../../src/assets/VitalHub_Logo.png')} />
+      <Logo source={require("../../../src/assets/images/VitalHub_Logo.png")} />
 
-            <Title>Recuperar Senha</Title>
+      <Title>Recuperar Senha</Title>
 
-            <Subtitle>Digite abaixo seu email cadastrado que enviaremos um link para recuperação de senha</Subtitle>
+      <Subtitle>
+        Digite abaixo seu email cadastrado que enviaremos um link para
+        recuperação de senha
+      </Subtitle>
 
-            <Input placeholder="Usuário ou E-mail..." />
+      <Input placeholder="Usuário ou E-mail..." />
 
-            <Button>
-                <ButtonTitle>Continuar</ButtonTitle>
-            </Button>
-        </Container>
-    )
+      <Button>
+        <ButtonTitle>Continuar</ButtonTitle>
+      </Button>
+    </Container>
+  );
 }

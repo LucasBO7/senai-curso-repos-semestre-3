@@ -1,17 +1,33 @@
-import React from 'react'
-import { Header, HeaderContent, TitlesContainer, UserImage, UserNameTitle, WelcomeTitle } from './Style.js';
+import React from "react";
+import {
+  HeaderContainer,
+  HeaderContent,
+  NotificationBtn,
+  NotificationIcon,
+  TitlesContainer,
+  UserImage,
+  UserNameTitle,
+  WelcomeTitle,
+} from "./Style.js";
 
-export default function index() {
-    return (
-        <Header>
-            <HeaderContent>
-                <UserImage />
+export const Header = () => {
+  return (
+    <HeaderContainer>
+      <HeaderContent>
+        <UserImage
+          source={require("../../assets/images/doctorImg.png")}
+          alt="Profile Picture"
+        />
 
-                <TitlesContainer>
-                    <WelcomeTitle>Bem vindo</WelcomeTitle>
-                    <UserNameTitle>Dr.Claudio</UserNameTitle>
-                </TitlesContainer>
-            </HeaderContent>
-        </Header >
-    )
-}
+        <TitlesContainer>
+          <WelcomeTitle>Bem vindo</WelcomeTitle>
+          <UserNameTitle>Dr.Claudio</UserNameTitle>
+        </TitlesContainer>
+
+        <NotificationBtn>
+          <NotificationIcon />
+        </NotificationBtn>
+      </HeaderContent>
+    </HeaderContainer>
+  );
+};

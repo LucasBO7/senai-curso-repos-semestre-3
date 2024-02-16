@@ -10,8 +10,8 @@ export default function Perfil() {
     return (
         <ScrollView>
             <Container>
-                <PerfilImage source={require('../../assets/perfil-img.png')} />
-                
+                <PerfilImage source={require('../../assets/images/perfil-img.png')} />
+
                 <PerfilInfoContainer>
                     <PerfilName>Perfil Kosta</PerfilName>
                     <PerfilEmail>richard.kosta@gmail.com</PerfilEmail>

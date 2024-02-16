@@ -14,7 +14,7 @@ export const Prontuario = () => {
             {/* Layout grid Area */}
             <Container>
                 {/* Perfil Image */}
-                <PerfilImage source={require('../../assets/perfil-img.png')} />
+                <PerfilImage source={require('../../assets/images/perfil-img.png')} />
 
                 {/* Text Area */}
                 <PerfilInfoContainer>
@@ -28,17 +28,22 @@ export const Prontuario = () => {
                     placeholder="Descrição..."
                     inputHeight="121px"
                     isMultiline={true}
+                    textAlignVertical="top"
                 />
+
                 <ProntuarioInput
                     labelText="Diagnóstico do paciente"
                     placeholder="Diagnóstico..."
                     isMultiline={true}
+                    textAlignVertical="center"
                 />
+
                 <ProntuarioInput
                     labelText="Prescrição médica"
                     placeholder="Prescrição médica..."
                     inputHeight="121px"
                     isMultiline={true}
+                    textAlignVertical="top"
                 />
 
                 <Button>
