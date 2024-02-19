@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ConsultListContainer,
   ConsultasMedicoContainer,
@@ -25,8 +25,12 @@ import { CancelLink } from "../../components/Link/Style";
 import CalendarList from "../../components/Callendar";
 import { Footer } from "../../components/Footer";
 import { ScrollView } from "react-native";
+import { ModalConfirmation } from "../../components/ModalConfirmation";
 
 export default function ConsultasMedico() {
+
+  const [statusLista, setStatusLista] = useState("pendente");
+
   return (
     <Container>
       <Header />
@@ -38,21 +42,31 @@ export default function ConsultasMedico() {
 
         {/* Filter Buttons */}
         <QueryStatusContainer>
-          <QueryStatusButton isBtnActivated={true} btnText="Agendadas" />
-          <QueryStatusButton isBtnActivated={false} btnText="Realizadas" />
-          <QueryStatusButton isBtnActivated={false} btnText="Canceladas" />
+          <QueryStatusButton
+            isBtnActivated={statusLista === "pendente"}
+            onPress={() => setStatusLista("pendente")}
+            btnText="Agendadas" />
+          <QueryStatusButton
+            isBtnActivated={statusLista === "realizado"}
+            onPress={() => setStatusLista("realizado")}
+            btnText="Realizadas" />
+          <QueryStatusButton
+            isBtnActivated={statusLista === "cancelado"}
+            onPress={() => setStatusLista("cancelado")}
+            btnText="Canceladas" />
         </QueryStatusContainer>
 
         {/* Consults List */}
         <ConsultListContainer>
           <ScrollView scrollEnabled nestedScrollEnabled>
             <QueryContainer>
+              {/* Imagem */}
               <PatientPerfilImg
-                source={require("../../assets/images/userPerfilImg.png")}
-              />
+                source={require("../../assets/images/userPerfilImg.png")} />
 
+              {/* Informações do Paciente */}
               <PatientInfosContainer>
-                {/* Região superior (AMARELO) */}
+                {/* Nome do paciente */}
                 <PatientName>Niccole Sarga</PatientName>
 
                 <PatientCategoriesContainer>
@@ -65,7 +79,10 @@ export default function ConsultasMedico() {
 
                 {/* Região inferior (AZUL) */}
                 <PatientInfosBottom>
-                  <ConsultationTime timeText="14:00" />
+                  <ConsultationTime
+                    timeText="14:00"
+                    timeContainerColor="#e8fcfd"
+                    timeContentColor="#49b3ba" />
                   <CancelLink>Cancelar</CancelLink>
                 </PatientInfosBottom>
               </PatientInfosContainer>
@@ -90,7 +107,10 @@ export default function ConsultasMedico() {
 
                 {/* Região inferior (AZUL) */}
                 <PatientInfosBottom>
-                  <ConsultationTime timeText="15:00" />
+                  <ConsultationTime
+                    timeText="14:00"
+                    timeContainerColor="#e8fcfd"
+                    timeContentColor="#49b3ba" />
                   <CancelLink>Cancelar</CancelLink>
                 </PatientInfosBottom>
               </PatientInfosContainer>
@@ -115,7 +135,10 @@ export default function ConsultasMedico() {
 
                 {/* Região inferior (AZUL) */}
                 <PatientInfosBottom>
-                  <ConsultationTime timeText="14:00" />
+                  <ConsultationTime
+                    timeText="14:00"
+                    timeContainerColor="#e8fcfd"
+                    timeContentColor="#49b3ba" />
                   <CancelLink>Cancelar</CancelLink>
                 </PatientInfosBottom>
               </PatientInfosContainer>
@@ -140,7 +163,10 @@ export default function ConsultasMedico() {
 
                 {/* Região inferior (AZUL) */}
                 <PatientInfosBottom>
-                  <ConsultationTime timeText="15:00" />
+                  <ConsultationTime
+                    timeText="14:00"
+                    timeContainerColor="#e8fcfd"
+                    timeContentColor="#49b3ba" />
                   <CancelLink>Cancelar</CancelLink>
                 </PatientInfosBottom>
               </PatientInfosContainer>
@@ -150,7 +176,7 @@ export default function ConsultasMedico() {
       </ConsultasMedicoContainer>
 
       <Footer />
-      {/* <ModalConfirmation /> */}
+      <ModalConfirmation />
     </Container>
   );
 }

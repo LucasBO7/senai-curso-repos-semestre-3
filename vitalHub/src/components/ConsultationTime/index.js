@@ -5,11 +5,11 @@ import {
   ConsultationTimeLabel,
 } from "./Style";
 
-export const ConsultationTime = ({ timeText }) => {
+export const ConsultationTime = ({ timeText, timeContainerColor, timeContentColor }) => {
   return (
-    <ConsultationTimeContainer>
+    <ConsultationTimeContainer timeContainerColor={timeContainerColor} >
       <ClockIcon />
-      <ConsultationTimeLabel>{timeText}</ConsultationTimeLabel>
+      <ConsultationTimeLabel timeContentColor={timeContentColor}>{timeText}</ConsultationTimeLabel>
     </ConsultationTimeContainer>
   );
 };

@@ -12,7 +12,8 @@ export const ConsultationTimeContainer = styled.View`
 
   width: 45.45%;
   height: 26px;
-  background-color: #e8fcfd;
+  /* background-color: #e8fcfd; */
+  background-color: ${props => props.timeContainerColor};
 `;
 
 export const ClockIcon = styled(AntDesign).attrs({
@@ -24,5 +25,6 @@ export const ClockIcon = styled(AntDesign).attrs({
 `;
 
 export const ConsultationTimeLabel = styled(QueryCategory)`
-  color: #49b3ba;
+  /* color: #49b3ba; */
+  color: ${props => props.timeContentColor};
 `;

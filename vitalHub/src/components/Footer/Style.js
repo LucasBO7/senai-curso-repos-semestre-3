@@ -23,7 +23,7 @@ export const FooterLink = styled.TouchableOpacity`
 `;
 
 export const LinkIcon = styled((props) => props.iconImportName).attrs({
-  name: props.iconName,
+  name: props => props.iconName,
   size: 13.5,
   color: "black",
 })``;

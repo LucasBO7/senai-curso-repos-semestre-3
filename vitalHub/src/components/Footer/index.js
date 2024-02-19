@@ -6,17 +6,17 @@ export const Footer = () => {
   return (
     <FooterContainer>
       <FooterLink>
-        <LinkIcon iconImportName={Entypo} iconName="calendar" />
+        <Entypo name="calendar" size={13.5} color="black" />
         <LinkLabel>Teste</LinkLabel>
       </FooterLink>
 
       <FooterLink>
-        <LinkIcon iconImportName={FontAwesome5} iconName="hospital" />
+        <FontAwesome5 name="hospital" size={13.5} color="black" />
         <LinkLabel>Teste</LinkLabel>
       </FooterLink>
 
       <FooterLink>
-        <LinkIcon iconImportName={Octicons} iconName="feed-person" />
+        <Octicons name="feed-person" size={13.5} color="black" />
         <LinkLabel>Teste</LinkLabel>
       </FooterLink>
     </FooterContainer>
