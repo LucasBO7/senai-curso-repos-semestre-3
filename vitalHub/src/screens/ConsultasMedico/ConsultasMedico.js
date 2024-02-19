@@ -45,105 +45,107 @@ export default function ConsultasMedico() {
 
         {/* Consults List */}
         <ConsultListContainer>
-          <QueryContainer>
-            <PatientPerfilImg
-              source={require("../../assets/images/userPerfilImg.png")}
-            />
+          <ScrollView scrollEnabled nestedScrollEnabled>
+            <QueryContainer>
+              <PatientPerfilImg
+                source={require("../../assets/images/userPerfilImg.png")}
+              />
 
-            <PatientInfosContainer>
-              {/* Região superior (AMARELO) */}
-              <PatientName>Niccole Sarga</PatientName>
+              <PatientInfosContainer>
+                {/* Região superior (AMARELO) */}
+                <PatientName>Niccole Sarga</PatientName>
 
-              <PatientCategoriesContainer>
-                <PatientAge>22 anos</PatientAge>
-                <PatientPerfilEllipse
-                  source={require("../../assets/images/ellipse.png")}
-                />
-                <QueryCategory>Rotina</QueryCategory>
-              </PatientCategoriesContainer>
+                <PatientCategoriesContainer>
+                  <PatientAge>22 anos</PatientAge>
+                  <PatientPerfilEllipse
+                    source={require("../../assets/images/ellipse.png")}
+                  />
+                  <QueryCategory>Rotina</QueryCategory>
+                </PatientCategoriesContainer>
 
-              {/* Região inferior (AZUL) */}
-              <PatientInfosBottom>
-                <ConsultationTime timeText="14:00" />
-                <CancelLink>Cancelar</CancelLink>
-              </PatientInfosBottom>
-            </PatientInfosContainer>
-          </QueryContainer>
+                {/* Região inferior (AZUL) */}
+                <PatientInfosBottom>
+                  <ConsultationTime timeText="14:00" />
+                  <CancelLink>Cancelar</CancelLink>
+                </PatientInfosBottom>
+              </PatientInfosContainer>
+            </QueryContainer>
 
-          <QueryContainer>
-            <PatientPerfilImg
-              source={require("../../assets/images/userImg2.png")}
-            />
+            <QueryContainer>
+              <PatientPerfilImg
+                source={require("../../assets/images/userImg2.png")}
+              />
 
-            <PatientInfosContainer>
-              {/* Região superior (AMARELO) */}
-              <PatientName>Richard Kosta</PatientName>
+              <PatientInfosContainer>
+                {/* Região superior (AMARELO) */}
+                <PatientName>Richard Kosta</PatientName>
 
-              <PatientCategoriesContainer>
-                <PatientAge>28 anos</PatientAge>
-                <PatientPerfilEllipse
-                  source={require("../../assets/images/ellipse.png")}
-                />
-                <QueryCategory>Urgência</QueryCategory>
-              </PatientCategoriesContainer>
+                <PatientCategoriesContainer>
+                  <PatientAge>28 anos</PatientAge>
+                  <PatientPerfilEllipse
+                    source={require("../../assets/images/ellipse.png")}
+                  />
+                  <QueryCategory>Urgência</QueryCategory>
+                </PatientCategoriesContainer>
 
-              {/* Região inferior (AZUL) */}
-              <PatientInfosBottom>
-                <ConsultationTime timeText="15:00" />
-                <CancelLink>Cancelar</CancelLink>
-              </PatientInfosBottom>
-            </PatientInfosContainer>
-          </QueryContainer>
+                {/* Região inferior (AZUL) */}
+                <PatientInfosBottom>
+                  <ConsultationTime timeText="15:00" />
+                  <CancelLink>Cancelar</CancelLink>
+                </PatientInfosBottom>
+              </PatientInfosContainer>
+            </QueryContainer>
 
-          <QueryContainer>
-            <PatientPerfilImg
-              source={require("../../assets/images/userPerfilImg.png")}
-            />
+            <QueryContainer>
+              <PatientPerfilImg
+                source={require("../../assets/images/userPerfilImg.png")}
+              />
 
-            <PatientInfosContainer>
-              {/* Região superior (AMARELO) */}
-              <PatientName>Niccole Sarga</PatientName>
+              <PatientInfosContainer>
+                {/* Região superior (AMARELO) */}
+                <PatientName>Niccole Sarga</PatientName>
 
-              <PatientCategoriesContainer>
-                <PatientAge>22 anos</PatientAge>
-                <PatientPerfilEllipse
-                  source={require("../../assets/images/ellipse.png")}
-                />
-                <QueryCategory>Rotina</QueryCategory>
-              </PatientCategoriesContainer>
+                <PatientCategoriesContainer>
+                  <PatientAge>22 anos</PatientAge>
+                  <PatientPerfilEllipse
+                    source={require("../../assets/images/ellipse.png")}
+                  />
+                  <QueryCategory>Rotina</QueryCategory>
+                </PatientCategoriesContainer>
 
-              {/* Região inferior (AZUL) */}
-              <PatientInfosBottom>
-                <ConsultationTime timeText="14:00" />
-                <CancelLink>Cancelar</CancelLink>
-              </PatientInfosBottom>
-            </PatientInfosContainer>
-          </QueryContainer>
+                {/* Região inferior (AZUL) */}
+                <PatientInfosBottom>
+                  <ConsultationTime timeText="14:00" />
+                  <CancelLink>Cancelar</CancelLink>
+                </PatientInfosBottom>
+              </PatientInfosContainer>
+            </QueryContainer>
 
-          <QueryContainer>
-            <PatientPerfilImg
-              source={require("../../assets/images/userImg2.png")}
-            />
+            <QueryContainer>
+              <PatientPerfilImg
+                source={require("../../assets/images/userImg2.png")}
+              />
 
-            <PatientInfosContainer>
-              {/* Região superior (AMARELO) */}
-              <PatientName>Richard Kosta</PatientName>
+              <PatientInfosContainer>
+                {/* Região superior (AMARELO) */}
+                <PatientName>Richard Kosta</PatientName>
 
-              <PatientCategoriesContainer>
-                <PatientAge>28 anos</PatientAge>
-                <PatientPerfilEllipse
-                  source={require("../../assets/images/ellipse.png")}
-                />
-                <QueryCategory>Urgência</QueryCategory>
-              </PatientCategoriesContainer>
+                <PatientCategoriesContainer>
+                  <PatientAge>28 anos</PatientAge>
+                  <PatientPerfilEllipse
+                    source={require("../../assets/images/ellipse.png")}
+                  />
+                  <QueryCategory>Urgência</QueryCategory>
+                </PatientCategoriesContainer>
 
-              {/* Região inferior (AZUL) */}
-              <PatientInfosBottom>
-                <ConsultationTime timeText="15:00" />
-                <CancelLink>Cancelar</CancelLink>
-              </PatientInfosBottom>
-            </PatientInfosContainer>
-          </QueryContainer>
+                {/* Região inferior (AZUL) */}
+                <PatientInfosBottom>
+                  <ConsultationTime timeText="15:00" />
+                  <CancelLink>Cancelar</CancelLink>
+                </PatientInfosBottom>
+              </PatientInfosContainer>
+            </QueryContainer>
+          </ScrollView>
         </ConsultListContainer>
       </ConsultasMedicoContainer>
 

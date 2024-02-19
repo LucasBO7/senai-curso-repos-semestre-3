@@ -42,15 +42,16 @@ export const PerfilInfoContainer = styled.View`
 `;
 
 export const ConsultasMedicoContainer = styled.View`
-  height: max-content;
+  height: 546px;
   width: 88.8%;
-  margin: 20px 0px;
+  border-bottom: 20px;
+  /* margin: 20px 0px; */
 `;
 
 export const QueryStatusContainer = styled.View`
-  width: 100%;
   flex-direction: row;
   justify-content: space-between;
+  width: 100%;
   margin-bottom: 24px;
 `;
 

@@ -1,30 +1,34 @@
 import styled from "styled-components";
-import { Entypo } from '@expo/vector-icons';
 
 export const FooterContainer = styled.View`
-    position: relative;
-    bottom: -40px;
-    flex-direction: row;
-    width: 100%;
-    border: 2px solid green;
-    height: 60px;
+  flex-direction: row;
+  justify-content: space-around;
+  position: relative;
+  bottom: 2px;
+  width: 100%;
+  margin-top: 4px;
+  height: 60px;
 `;
 
 export const FooterLink = styled.TouchableOpacity`
-    background-color: red;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+  width: 14.4%;
+
+  border-top-width: 2px;
+  border-top-style: solid;
+  border-top-color: #607ec5;
 `;
 
-export const LinkIcon = styled(Entypo).attrs({
-    name: 'calendar',
-    size: 13.5,
-    color: 'black'
-})`
-`;
+export const LinkIcon = styled((props) => props.iconImportName).attrs({
+  name: props.iconName,
+  size: 13.5,
+  color: "black",
+})``;
 
 export const LinkLabel = styled.Text`
-    font-family: "Quicksand_500Medium";
-    font-size: 12px;
+  font-family: "Quicksand_500Medium";
+  font-size: 12px;
 `;
