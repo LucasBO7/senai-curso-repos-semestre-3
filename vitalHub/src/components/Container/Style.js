@@ -48,7 +48,7 @@ export const ConsultasMedicoContainer = styled.View`
   /* margin: 20px 0px; */
 `;
 
-export const QueryStatusContainer = styled.View`
+export const ConsultStatusContainer = styled.View`
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
@@ -60,7 +60,7 @@ export const ConsultListContainer = styled.ScrollView`
   height: 100%;
 `;
 
-export const QueryContainer = styled.View.attrs({
+export const ConsultCard = styled.View.attrs({
   shadowcolor: "#000",
   shadowOffset: {
     width: 4,

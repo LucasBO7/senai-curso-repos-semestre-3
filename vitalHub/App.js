@@ -20,6 +20,7 @@ import CadastroConta from "./src/screens/CadastroConta/CadastroConta";
 import ConsultasMedico from "./src/screens/ConsultasMedico/ConsultasMedico";
 import Perfil from "./src/screens/Perfil/Perfil";
 import { Prontuario } from "./src/screens/Prontuario/Prontuario";
+import { ConsultasPaciente } from "./src/screens/ConsultasPaciente/ConsultasPaciente";
 
 const Stack = createNativeStackNavigator();
 
@@ -83,6 +84,11 @@ export default function App() {
           name="ConsultasMedico"
           component={ConsultasMedico}
           options={{ title: "Consultas Medico" }}
+        />
+        <Stack.Screen
+          name="ConsultasPaciente"
+          component={ConsultasPaciente}
+          options={{ title: "Consultas Paciente" }}
         />
         <Stack.Screen
           name="Perfil"

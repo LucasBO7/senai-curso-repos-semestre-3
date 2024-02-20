@@ -10,10 +10,10 @@ import {
   Container,
   PatientCategoriesContainer,
   PatientInfosContainer,
-  QueryContainer,
-  QueryStatusContainer,
+  ConsultCard,
+  ConsultStatusContainer,
 } from "../../components/Container/Style";
-import { QueryStatusButton } from "../../components/QueryStatusButton/index";
+import { ConsultStatusButton } from "../../components/ConsultStatusButton/index";
 import {
   PatientPerfilEllipse,
   PatientPerfilImg,
@@ -30,9 +30,14 @@ import { ModalConfirmation } from "../../components/ModalConfirmation";
 export default function ConsultasMedico() {
   const [statusLista, setStatusLista] = useState("pendente");
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [activatedPage, setActivatedPage] = useState("agendadas");
 
   const toggleModal = () => {
     setIsModalVisible(false);
+  };
+
+  const activatePageFunction = (activatedPageName) => {
+    setActivatedPage(activatedPageName);
   };
 
   return (
@@ -45,28 +50,29 @@ export default function ConsultasMedico() {
         <CalendarList />
 
         {/* Filter Buttons */}
-        <QueryStatusContainer>
-          <QueryStatusButton
+        <ConsultStatusContainer>
+          <ConsultStatusButton
             isBtnActivated={statusLista === "pendente"}
             onPress={() => setStatusLista("pendente")}
             btnText="Agendadas"
           />
-          <QueryStatusButton
+          <ConsultStatusButton
             isBtnActivated={statusLista === "realizado"}
             onPress={() => setStatusLista("realizado")}
             btnText="Realizadas"
           />
-          <QueryStatusButton
+          <ConsultStatusButton
             isBtnActivated={statusLista === "cancelado"}
             onPress={() => setStatusLista("cancelado")}
             btnText="Canceladas"
           />
-        </QueryStatusContainer>
+        </ConsultStatusContainer>
 
         {/* Consults List */}
         <ConsultListContainer>
           <ScrollView scrollEnabled nestedScrollEnabled>
-            <QueryContainer>
+
+            <ConsultCard>
               {/* Imagem */}
               <PatientPerfilImg
                 source={require("../../assets/images/userPerfilImg.png")}
@@ -79,9 +85,7 @@ export default function ConsultasMedico() {
 
                 <PatientCategoriesContainer>
                   <PatientAge>22 anos</PatientAge>
-                  <PatientPerfilEllipse
-                    source={require("../../assets/images/ellipse.png")}
-                  />
+                  <PatientPerfilEllipse source={require("../../assets/images/ellipse.png")} />
                   <QueryCategory>Rotina</QueryCategory>
                 </PatientCategoriesContainer>
 
@@ -89,15 +93,15 @@ export default function ConsultasMedico() {
                 <PatientInfosBottom>
                   <ConsultationTime
                     timeText="14:00"
-                    timeContainerColor="#e8fcfd"
-                    timeContentColor="#49b3ba"
+                    timeContainerColor="#F1F0F5"
+                    timeContentColor="#4E4B59"
                   />
                   <LinkThird textColor="#344F8F">Ver prontuário</LinkThird>
                 </PatientInfosBottom>
               </PatientInfosContainer>
-            </QueryContainer>
+            </ConsultCard>
 
-            <QueryContainer>
+            <ConsultCard>
               <PatientPerfilImg
                 source={require("../../assets/images/userImg2.png")}
               />
@@ -131,9 +135,9 @@ export default function ConsultasMedico() {
                   </LinkThird>
                 </PatientInfosBottom>
               </PatientInfosContainer>
-            </QueryContainer>
+            </ConsultCard>
 
-            <QueryContainer>
+            <ConsultCard>
               <PatientPerfilImg
                 source={require("../../assets/images/userPerfilImg3.png")}
               />
@@ -154,14 +158,14 @@ export default function ConsultasMedico() {
                 <PatientInfosBottom>
                   <ConsultationTime
                     timeText="15:00"
-                    timeContainerColor="#e8fcfd"
-                    timeContentColor="#49b3ba"
+                    timeContainerColor="#F1F0F5"
+                    timeContentColor="#4E4B59"
                   />
                 </PatientInfosBottom>
               </PatientInfosContainer>
-            </QueryContainer>
+            </ConsultCard>
 
-            <QueryContainer>
+            <ConsultCard>
               <PatientPerfilImg
                 source={require("../../assets/images/userImg2.png")}
               />
@@ -188,12 +192,16 @@ export default function ConsultasMedico() {
                   <LinkThird textColor="#344F8F">Ver prontuário</LinkThird>
                 </PatientInfosBottom>
               </PatientInfosContainer>
-            </QueryContainer>
+            </ConsultCard>
           </ScrollView>
         </ConsultListContainer>
       </ConsultasMedicoContainer>
 
-      <Footer />
+      <Footer
+        activatedPage={activatedPage}
+        activatePageFunction={activatePageFunction}
+      />
+
       <ModalConfirmation
         isModalVisible={isModalVisible}
         cancelModalFunction={toggleModal}

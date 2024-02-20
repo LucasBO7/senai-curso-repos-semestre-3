@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const QueryStatusButtonContainer = styled.TouchableHighlight.attrs({
+export const ButtonContainer = styled.TouchableHighlight.attrs({
   underlayColor: "#607EC5",
 })`
   justify-content: center;
@@ -13,7 +13,7 @@ export const QueryStatusButtonContainer = styled.TouchableHighlight.attrs({
     : "background-color: #496BBA;"}
 `;
 
-export const QueryStatusText = styled.Text`
+export const ButtonText = styled.Text`
   font-family: "MontserratAlternates_600SemiBold";
   font-size: 12px;
   ${props => props.isBtnActivated == false

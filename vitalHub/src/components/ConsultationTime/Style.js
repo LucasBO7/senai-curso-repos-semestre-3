@@ -12,19 +12,17 @@ export const ConsultationTimeContainer = styled.View`
 
   width: 45.45%;
   height: 26px;
-  /* background-color: #e8fcfd; */
   background-color: ${props => props.timeContainerColor};
 `;
 
 export const ClockIcon = styled(AntDesign).attrs({
   name: "clockcircle",
   size: 14,
-  color: "#49B3BA",
 })`
   vertical-align: middle;
+  color: ${props => props.timeContentColor};
 `;
 
 export const ConsultationTimeLabel = styled(QueryCategory)`
-  /* color: #49b3ba; */
   color: ${props => props.timeContentColor};
 `;

@@ -8,7 +8,7 @@ import {
 export const ConsultationTime = ({ timeText, timeContainerColor, timeContentColor }) => {
   return (
     <ConsultationTimeContainer timeContainerColor={timeContainerColor} >
-      <ClockIcon />
+      <ClockIcon timeContentColor={timeContentColor} />
       <ConsultationTimeLabel timeContentColor={timeContentColor}>{timeText}</ConsultationTimeLabel>
     </ConsultationTimeContainer>
   );

@@ -10,16 +10,25 @@ export const FooterContainer = styled.View`
   height: 60px;
 `;
 
-export const FooterLink = styled.TouchableOpacity`
+export const FooterLinkContainer = styled.TouchableHighlight.attrs({
+  underlayColor: "#607EC5",
+})`
   justify-content: center;
   align-items: center;
 
   height: 100%;
   width: 14.4%;
 
+  /* border-top: 2px solid #607ec5; */
+
   border-top-width: 2px;
   border-top-style: solid;
-  border-top-color: #607ec5;
+  border-top-color: ${props => props.activatedPageBorder};
+`;
+
+export const FooterLinkContent = styled.View`
+  justify-content: center;
+  align-items: center;
 `;
 
 export const LinkIcon = styled((props) => props.iconImportName).attrs({
@@ -31,4 +40,5 @@ export const LinkIcon = styled((props) => props.iconImportName).attrs({
 export const LinkLabel = styled.Text`
   font-family: "Quicksand_500Medium";
   font-size: 12px;
+  color: ${props => props.activatedPageBorder};
 `;

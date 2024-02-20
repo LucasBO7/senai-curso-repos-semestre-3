@@ -32,13 +32,13 @@ export const PerfilEmail = styled.Text`
 //     line-height: 20px;
 // `;
 
-export const MonthYearTitle = styled.Text`
-  font-family: "MontserratAlternates_600SemiBold";
-  font-size: 20px;
-  color: #4e4b59;
-  align-self: flex-start;
-  margin-bottom: 17px;
-`;
+// export const MonthYearTitle = styled.Text`
+//   font-family: "MontserratAlternates_600SemiBold";
+//   font-size: 20px;
+//   color: #4e4b59;
+//   align-self: flex-start;
+//   margin-bottom: 17px;
+// `;
 
 export const PatientName = styled(PerfilName)`
   margin-bottom: -10px;
