@@ -21,15 +21,19 @@ import {
 import { MonthYearTitle, PatientName } from "../../components/Title/Style";
 import { PatientAge, QueryCategory } from "../../components/Subtitle/Style";
 import { ConsultationTime } from "../../components/ConsultationTime";
-import { CancelLink } from "../../components/Link/Style";
+import { CancelLink, LinkThird } from "../../components/Link/Style";
 import CalendarList from "../../components/Callendar";
 import { Footer } from "../../components/Footer";
 import { ScrollView } from "react-native";
 import { ModalConfirmation } from "../../components/ModalConfirmation";
 
 export default function ConsultasMedico() {
-
   const [statusLista, setStatusLista] = useState("pendente");
+  const [isModalVisible, setIsModalVisible] = useState(false);
+
+  const toggleModal = () => {
+    setIsModalVisible(false);
+  };
 
   return (
     <Container>
@@ -45,15 +49,18 @@ export default function ConsultasMedico() {
           <QueryStatusButton
             isBtnActivated={statusLista === "pendente"}
             onPress={() => setStatusLista("pendente")}
-            btnText="Agendadas" />
+            btnText="Agendadas"
+          />
           <QueryStatusButton
             isBtnActivated={statusLista === "realizado"}
             onPress={() => setStatusLista("realizado")}
-            btnText="Realizadas" />
+            btnText="Realizadas"
+          />
           <QueryStatusButton
             isBtnActivated={statusLista === "cancelado"}
             onPress={() => setStatusLista("cancelado")}
-            btnText="Canceladas" />
+            btnText="Canceladas"
+          />
         </QueryStatusContainer>
 
         {/* Consults List */}
@@ -62,7 +69,8 @@ export default function ConsultasMedico() {
             <QueryContainer>
               {/* Imagem */}
               <PatientPerfilImg
-                source={require("../../assets/images/userPerfilImg.png")} />
+                source={require("../../assets/images/userPerfilImg.png")}
+              />
 
               {/* Informações do Paciente */}
               <PatientInfosContainer>
@@ -82,8 +90,9 @@ export default function ConsultasMedico() {
                   <ConsultationTime
                     timeText="14:00"
                     timeContainerColor="#e8fcfd"
-                    timeContentColor="#49b3ba" />
-                  <CancelLink>Cancelar</CancelLink>
+                    timeContentColor="#49b3ba"
+                  />
+                  <LinkThird textColor="#344F8F">Ver prontuário</LinkThird>
                 </PatientInfosBottom>
               </PatientInfosContainer>
             </QueryContainer>
@@ -110,36 +119,44 @@ export default function ConsultasMedico() {
                   <ConsultationTime
                     timeText="14:00"
                     timeContainerColor="#e8fcfd"
-                    timeContentColor="#49b3ba" />
-                  <CancelLink>Cancelar</CancelLink>
+                    timeContentColor="#49b3ba"
+                  />
+                  <LinkThird
+                    textColor="#c81d25"
+                    onPress={() => {
+                      setIsModalVisible(true);
+                    }}
+                  >
+                    Cancelar
+                  </LinkThird>
                 </PatientInfosBottom>
               </PatientInfosContainer>
             </QueryContainer>
 
             <QueryContainer>
               <PatientPerfilImg
-                source={require("../../assets/images/userPerfilImg.png")}
+                source={require("../../assets/images/userPerfilImg3.png")}
               />
 
               <PatientInfosContainer>
                 {/* Região superior (AMARELO) */}
-                <PatientName>Niccole Sarga</PatientName>
+                <PatientName>Robbert Charlie</PatientName>
 
                 <PatientCategoriesContainer>
-                  <PatientAge>22 anos</PatientAge>
+                  <PatientAge>62 anos</PatientAge>
                   <PatientPerfilEllipse
                     source={require("../../assets/images/ellipse.png")}
                   />
-                  <QueryCategory>Rotina</QueryCategory>
+                  <QueryCategory>Consulta</QueryCategory>
                 </PatientCategoriesContainer>
 
                 {/* Região inferior (AZUL) */}
                 <PatientInfosBottom>
                   <ConsultationTime
-                    timeText="14:00"
+                    timeText="15:00"
                     timeContainerColor="#e8fcfd"
-                    timeContentColor="#49b3ba" />
-                  <CancelLink>Cancelar</CancelLink>
+                    timeContentColor="#49b3ba"
+                  />
                 </PatientInfosBottom>
               </PatientInfosContainer>
             </QueryContainer>
@@ -166,8 +183,9 @@ export default function ConsultasMedico() {
                   <ConsultationTime
                     timeText="14:00"
                     timeContainerColor="#e8fcfd"
-                    timeContentColor="#49b3ba" />
-                  <CancelLink>Cancelar</CancelLink>
+                    timeContentColor="#49b3ba"
+                  />
+                  <LinkThird textColor="#344F8F">Ver prontuário</LinkThird>
                 </PatientInfosBottom>
               </PatientInfosContainer>
             </QueryContainer>
@@ -176,7 +194,10 @@ export default function ConsultasMedico() {
       </ConsultasMedicoContainer>
 
       <Footer />
-      <ModalConfirmation />
+      <ModalConfirmation
+        isModalVisible={isModalVisible}
+        cancelModalFunction={toggleModal}
+      />
     </Container>
   );
 }

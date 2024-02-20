@@ -19,8 +19,9 @@ export const LinkSecondary = styled(LinkMedium).attrs({})`
   padding: 15px;
 `;
 
-export const CancelLink = styled.Text`
+export const LinkThird = styled.Text`
   font-family: "MontserratAlternates_500Medium";
   font-size: 12px;
-  color: #c81d25;
+  padding-top: 20px;
+  color: ${(props) => props.textColor};
 `;
