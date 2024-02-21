@@ -5,12 +5,10 @@ import {
   PatientInfosBottom,
 } from "../../components/Container/Style";
 import { Header } from "../../components/Header/index";
-
 import {
   Container,
   PatientCategoriesContainer,
   PatientInfosContainer,
-  ConsultCard,
   ConsultStatusContainer,
 } from "../../components/Container/Style";
 import { ConsultStatusButton } from "../../components/ConsultStatusButton/index";
@@ -18,7 +16,7 @@ import {
   PatientPerfilEllipse,
   PatientPerfilImg,
 } from "../../components/Image/Style";
-import { MonthYearTitle, PatientName } from "../../components/Title/Style";
+import { PatientName } from "../../components/Title/Style";
 import { PatientAge, QueryCategory } from "../../components/Subtitle/Style";
 import { ConsultationTime } from "../../components/ConsultationTime";
 import { CancelLink, LinkThird } from "../../components/Link/Style";
@@ -26,8 +24,18 @@ import CalendarList from "../../components/Callendar";
 import { Footer } from "../../components/Footer";
 import { ScrollView } from "react-native";
 import { ModalConfirmation } from "../../components/ModalConfirmation";
+import { ListComponent } from "../../components/List/List";
+import { ConsultCard } from "../../components/ConsultCard";
 
-export default function ConsultasMedico() {
+export const ConsultasMedico = () => {
+  const Consultas = [
+    { id: 1, nome: "Carlos", situacao: "pendente" },
+    { id: 2, nome: "Carlos", situacao: "Realizadas" },
+    { id: 3, nome: "Carlos", situacao: "Canceladas" },
+    { id: 4, nome: "Carlos", situacao: "Realizadas" },
+    { id: 5, nome: "Carlos", situacao: "Canceladas" },
+  ];
+
   const [statusLista, setStatusLista] = useState("pendente");
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [activatedPage, setActivatedPage] = useState("agendadas");
@@ -46,7 +54,6 @@ export default function ConsultasMedico() {
 
       {/* Content Container */}
       <ConsultasMedicoContainer>
-        {/* <MonthYearTitle>Novembro 2023</MonthYearTitle> */}
         <CalendarList />
 
         {/* Filter Buttons */}
@@ -71,7 +78,15 @@ export default function ConsultasMedico() {
         {/* Consults List */}
         <ConsultListContainer>
           <ScrollView scrollEnabled nestedScrollEnabled>
-
+            <ListComponent
+              data={Consultas}
+              keyExtractor={(item) => item.id}
+              renderItem={({ item }) =>
+                statusLista == item.situacao && (
+                  <ConsultCard situation={item.situacao} />
+                )
+              }
+            />
             <ConsultCard>
               {/* Imagem */}
               <PatientPerfilImg
@@ -85,7 +100,9 @@ export default function ConsultasMedico() {
 
                 <PatientCategoriesContainer>
                   <PatientAge>22 anos</PatientAge>
-                  <PatientPerfilEllipse source={require("../../assets/images/ellipse.png")} />
+                  <PatientPerfilEllipse
+                    source={require("../../assets/images/ellipse.png")}
+                  />
                   <QueryCategory>Rotina</QueryCategory>
                 </PatientCategoriesContainer>
 
@@ -208,4 +225,4 @@ export default function ConsultasMedico() {
       />
     </Container>
   );
-}
+};
