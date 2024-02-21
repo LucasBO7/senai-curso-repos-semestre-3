@@ -55,12 +55,12 @@ export const ConsultStatusContainer = styled.View`
   margin-bottom: 24px;
 `;
 
-export const ConsultListContainer = styled.ScrollView`
+export const ConsultListContainer = styled.View`
   width: 100%;
   height: 100%;
 `;
 
-export const ConsultCard = styled.View.attrs({
+export const ConsultCardContainer = styled.View.attrs({
   shadowcolor: "#000",
   shadowOffset: {
     width: 4,

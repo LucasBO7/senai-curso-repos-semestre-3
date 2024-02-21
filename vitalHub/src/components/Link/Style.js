@@ -19,9 +19,14 @@ export const LinkSecondary = styled(LinkMedium).attrs({})`
   padding: 15px;
 `;
 
-export const LinkThird = styled.Text`
+export const LinkThird = styled.TouchableOpacity`
+  
+`;
+
+export const LinkThirdText = styled.Text`
   font-family: "MontserratAlternates_500Medium";
   font-size: 12px;
   padding-top: 20px;
   color: ${(props) => props.textColor};
+  background-color: transparent;
 `;

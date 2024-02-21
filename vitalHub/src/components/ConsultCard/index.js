@@ -8,12 +8,16 @@ import {
 import { PatientName } from "../Title/Style";
 import { PatientAge, QueryCategory } from "../Subtitle/Style";
 import { ConsultationTime } from "../ConsultationTime";
-import { LinkThird } from "../Link/Style";
+import { LinkThird, LinkThirdText } from "../Link/Style";
+import { ConsultCardContainer } from "../Container/Style";
 
-export const ConsultCard = ({ situation }) => {
+export const ConsultCard = ({
+  situacao = "Pendentes",
+  onCancelPress,
+  onAppointmentPress
+}) => {
   return (
-    <ConsultCard>
-      {/* Imagem */}
+    <ConsultCardContainer>
       <PatientPerfilImg
         source={require("../../assets/images/userPerfilImg.png")}
       />
@@ -34,13 +38,26 @@ export const ConsultCard = ({ situation }) => {
         {/* Região inferior (AZUL) */}
         <PatientInfosBottom>
           <ConsultationTime
-            timeText="14:00"
-            timeContainerColor="#F1F0F5"
-            timeContentColor="#4E4B59"
+            situacao={situacao}
+            timeText={"10:35"}
           />
-          <LinkThird textColor="#344F8F">Ver prontuário</LinkThird>
+          {
+            situacao == "Canceladas" ? (
+              <>
+              </>
+            ) : situacao == "Pendentes" ?
+              (
+                <LinkThird onPress={() => { onCancelPress() }}>
+                  <LinkThirdText textColor="#C81D25">Cancelar</LinkThirdText>
+                </LinkThird>
+              ) : (
+                <LinkThird onPress={() => { onAppointmentPress() }}>
+                  <LinkThirdText textColor="#344F8F">Ver prontuário</LinkThirdText>
+                </LinkThird>
+              )
+          }
         </PatientInfosBottom>
-      </PatientInfosContainer>
-    </ConsultCard>
+      </PatientInfosContainer >
+    </ConsultCardContainer >
   );
 };

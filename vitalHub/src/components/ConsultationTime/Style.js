@@ -12,7 +12,7 @@ export const ConsultationTimeContainer = styled.View`
 
   width: 45.45%;
   height: 26px;
-  background-color: ${props => props.timeContainerColor};
+  background-color: ${(props) => props.situacao == "Pendentes" ? "#e8fcfd" : "#F1F0F5"};
 `;
 
 export const ClockIcon = styled(AntDesign).attrs({
@@ -20,9 +20,9 @@ export const ClockIcon = styled(AntDesign).attrs({
   size: 14,
 })`
   vertical-align: middle;
-  color: ${props => props.timeContentColor};
+  color: ${(props) => props.situacao == "Pendentes" ? "#49b3ba" : "#4E4B59"};
 `;
 
 export const ConsultationTimeLabel = styled(QueryCategory)`
-  color: ${props => props.timeContentColor};
+  color: ${(props) => props.situacao == "Pendentes" ? "#49b3ba" : "#4E4B59"};
 `;

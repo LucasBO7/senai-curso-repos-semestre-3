@@ -17,10 +17,10 @@ import RecuperarSenha from "./src/screens/RecuperarSenha/RecuperarSenha";
 import VerificacaoEmail from "./src/screens/VerificacaoEmail/VerificacaoEmail";
 import RedefinicaoSenha from "./src/screens/RedefinicaoSenha/RedefinicaoSenha";
 import CadastroConta from "./src/screens/CadastroConta/CadastroConta";
-import ConsultasMedico from "./src/screens/ConsultasMedico/ConsultasMedico";
 import Perfil from "./src/screens/Perfil/Perfil";
 import { Prontuario } from "./src/screens/Prontuario/Prontuario";
 import { ConsultasPaciente } from "./src/screens/ConsultasPaciente/ConsultasPaciente";
+import { ConsultasMedico } from "./src/screens/ConsultasMedico/ConsultasMedico";
 
 const Stack = createNativeStackNavigator();
 
@@ -48,7 +48,9 @@ export default function App() {
     // options: titulo da tela
 
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator screenOptions={{
+        headerShown: true
+      }}>
         <Stack.Screen
           name="Navegacao"
           component={Navegacao}
@@ -83,7 +85,7 @@ export default function App() {
         <Stack.Screen
           name="ConsultasMedico"
           component={ConsultasMedico}
-          options={{ title: "Consultas Medico" }}
+          options={{ title: "Consultas do Médico" }}
         />
         <Stack.Screen
           name="ConsultasPaciente"
