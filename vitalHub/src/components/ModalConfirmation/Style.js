@@ -16,6 +16,7 @@ export const ModalConfirmationContainer = styled.View`
     padding-top: 30px;
     border-radius: 15px;
     width: 92.7%;
-    height: 360px;
+    height: ${props => props.containerHeight};
+    /* height: 456px; */
     background-color: white;
 `;

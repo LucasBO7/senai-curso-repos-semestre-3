@@ -8,7 +8,7 @@ import { ModalConfirmationContainer, ModalContainer } from "./Style";
 export const ModalConfirmation = ({ isModalVisible, cancelModalFunction }) => {
   return (
     <ModalContainer isVisible={isModalVisible}>
-      <ModalConfirmationContainer>
+      <ModalConfirmationContainer containerHeight='350px'>
         <Title>Cancelar consulta</Title>
 
         <Subtitle>

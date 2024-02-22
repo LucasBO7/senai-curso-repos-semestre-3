@@ -17,3 +17,12 @@ export const PatientPerfilEllipse = styled.Image`
   margin-top: 10px;
   margin: 10px 8px 0px 8px;
 `;
+
+
+export const ImagePatient = styled.Image`
+  width: 80%;
+  height: 181px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 15px;
+`;

@@ -14,7 +14,8 @@ import { ConsultCardContainer } from "../Container/Style";
 export const ConsultCard = ({
   situacao = "Pendentes",
   onCancelPress,
-  onAppointmentPress
+  onAppointmentPress,
+  patient
 }) => {
   return (
     <ConsultCardContainer>
@@ -25,10 +26,10 @@ export const ConsultCard = ({
       {/* Informações do Paciente */}
       <PatientInfosContainer>
         {/* Nome do paciente */}
-        <PatientName>Niccole Sarga</PatientName>
+        <PatientName>{patient.name}</PatientName>
 
         <PatientCategoriesContainer>
-          <PatientAge>22 anos</PatientAge>
+          <PatientAge>{patient.age}</PatientAge>
           <PatientPerfilEllipse
             source={require("../../assets/images/ellipse.png")}
           />

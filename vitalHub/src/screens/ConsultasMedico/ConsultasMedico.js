@@ -26,6 +26,7 @@ import { ScrollView } from "react-native";
 import { ModalConfirmation } from "../../components/ModalConfirmation";
 import { ListComponent } from "../../components/List/List";
 import { ConsultCard } from "../../components/ConsultCard";
+import { ModalPatientRelatory } from "../../components/ModalPatientRelatory";
 
 const Consultas = [
   { id: 1, nome: "Carlos", situacao: "Pendentes" },
@@ -42,9 +43,20 @@ export const ConsultasMedico = () => {
   const [isCancelModalVisible, setIsCancelModalVisible] = useState(false);
   const [activatedPage, setActivatedPage] = useState("agendadas");
 
+  const [patients, setPatients] = useState(
+    {
+      id: 0,
+      name: 'Vinicius',
+      age: 21,
+      perfilImg: '...',
+    }
+  );
 
   const toggleModal = () => {
     isModalVisible ? setIsModalVisible(false) : setIsModalVisible(true);
+  };
+  const toggleCancelModal = () => {
+    isCancelModalVisible ? setIsCancelModalVisible(false) : setIsCancelModalVisible(true);
   };
 
   const activatePageFunction = (activatedPageName) => {
@@ -89,7 +101,9 @@ export const ConsultasMedico = () => {
                 return (
                   <ConsultCard
                     situacao={item.situacao}
-                    onCancelPress={toggleModal}
+                    patient={patients}
+                    // Passar os set das constantes e chamar função no componente
+                    onCancelPress={toggleCancelModal}
                     onAppointmentPress={toggleModal}
                   />
                 )
@@ -110,8 +124,17 @@ export const ConsultasMedico = () => {
       />
 
       <ModalConfirmation
+        isModalVisible={isCancelModalVisible}
+        cancelModalFunction={toggleCancelModal}
+      />
+
+      <ModalPatientRelatory
         isModalVisible={isModalVisible}
         cancelModalFunction={toggleModal}
+        imgSource={'src/assets/images/userPerfilImg'}
+        patientName={'Niccole Sarga'}
+        patientAge={'22 anos'}
+        patientEmail={'niccole.sarga@gmail.com'}
       />
     </Container>
   );
