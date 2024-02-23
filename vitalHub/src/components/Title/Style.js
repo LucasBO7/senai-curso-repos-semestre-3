@@ -7,6 +7,10 @@ export const Title = styled.Text`
   margin-bottom: 26px;
 `;
 
+export const TitleSecondary = styled(Title)`
+  text-align: center;
+`;
+
 // Perfil
 export const PerfilName = styled.Text`
   font-family: "MontserratAlternates_600SemiBold";

@@ -39,15 +39,3 @@ export const ButtonSecondary = styled(Button).attrs({})`
   background-color: #acabb7;
   width: ${(props) => props.btnWidth || "100%"};
 `;
-
-export const ScheduleConsultButton = styled.TouchableOpacity`
-  position: sticky;
-  width: 60px;
-  height: 60px;
-`;
-
-export const ScheduleConsultButtonIcon = styled(FontAwesome6).attrs({
-  name: "stethoscope",
-  size: 32,
-  color: "white",
-})``;

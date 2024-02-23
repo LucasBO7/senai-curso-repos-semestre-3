@@ -15,7 +15,8 @@ import { ModalConfirmation } from "../../components/ModalConfirmation";
 import { ListComponent } from "../../components/List/List";
 import { ConsultCard } from "../../components/ConsultCard";
 import { ModalPatientRelatory } from "../../components/ModalPatientRelatory";
-import { ScheduleConsultButton, ScheduleConsultButtonIcon } from "../../components/Button/Style";
+import { ScheduleConsultButton } from "../../components/ScheduleConsultButton";
+import { ModalScheduleConsult } from "../../components/ModalScheduleConsult";
 
 const Consultas = [
   { id: 1, nome: "Carlos", situacao: "Pendentes" },
@@ -27,8 +28,10 @@ const Consultas = [
 
 export const ConsultasPaciente = () => {
   const [statusLista, setStatusLista] = useState("Pendentes");
+
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isCancelModalVisible, setIsCancelModalVisible] = useState(false);
+  const [isScheduleConsultModalVisible, setIsScheduleConsultModalVisible] = useState(false);
   const [activatedPage, setActivatedPage] = useState("agendadas");
 
   const [patients, setPatients] = useState({
@@ -46,6 +49,10 @@ export const ConsultasPaciente = () => {
       ? setIsCancelModalVisible(false)
       : setIsCancelModalVisible(true);
   };
+
+  const toggleScheduleConsultModal = () => {
+    isScheduleConsultModalVisible ? setIsScheduleConsultModalVisible(false) : setIsScheduleConsultModalVisible(true);
+  }
 
   const activatePageFunction = (activatedPageName) => {
     setActivatedPage(activatedPageName);
@@ -103,14 +110,18 @@ export const ConsultasPaciente = () => {
           </ScrollView> */}
         </ConsultListContainer>
 
-        <ScheduleConsultButton>
-          <ScheduleConsultButtonIcon />
-        </ScheduleConsultButton>
+        <ScheduleConsultButton onPress={toggleScheduleConsultModal} />
       </ConsultasMedicoContainer>
 
       <Footer
         activatedPage={activatedPage}
         activatePageFunction={activatePageFunction}
+      />
+
+      <ModalScheduleConsult
+        isModalVisible={true}
+        isSelected={true}
+        buttonText={"Rotina"}
       />
 
       <ModalConfirmation
