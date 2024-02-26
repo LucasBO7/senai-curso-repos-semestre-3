@@ -120,8 +120,7 @@ export const ConsultasPaciente = () => {
 
       <ModalScheduleConsult
         isModalVisible={true}
-        isSelected={true}
-        buttonText={"Rotina"}
+        selectedButton={'rotina'}
       />
 
       <ModalConfirmation

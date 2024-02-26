@@ -30,7 +30,7 @@ export default function Login() {
 
       <LinkMedium>Esqueceu sua senha?</LinkMedium>
 
-      <Button>
+      <Button btnWidth='90%'>
         <ButtonTitle>Entrar</ButtonTitle>
       </Button>
 

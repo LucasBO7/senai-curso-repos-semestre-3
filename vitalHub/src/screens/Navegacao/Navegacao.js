@@ -32,6 +32,10 @@ export const Navegacao = ({ navigation }) => {
                 // Ao ser pressionado, navega para a screen "ConsultasPaciente"
                 onPress={() => { navigation.navigate("ConsultasPaciente") }} />
             <Button
+                title="Seleção de Clínicas"
+                // Ao ser pressionado, navega para a screen "ConsultasPaciente"
+                onPress={() => { navigation.navigate("ClinicSelection") }} />
+            <Button
                 title="Perfil"
                 // Ao ser pressionado, navega para a screen "Perfil"
                 onPress={() => { navigation.navigate("Perfil") }} />

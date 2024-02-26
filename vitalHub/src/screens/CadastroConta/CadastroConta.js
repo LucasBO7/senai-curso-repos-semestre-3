@@ -26,7 +26,7 @@ export default function CadastroConta() {
       <Input placeholder="Senha" />
       <Input placeholder="Confirmar Senha" />
 
-      <Button>
+      <Button btnWidth='90%'>
         <ButtonTitle>Cadastrar</ButtonTitle>
       </Button>
 

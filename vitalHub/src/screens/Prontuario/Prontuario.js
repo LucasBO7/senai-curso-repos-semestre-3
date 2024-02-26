@@ -46,7 +46,7 @@ export const Prontuario = () => {
                     textAlignVertical="top"
                 />
 
-                <Button>
+                <Button btnWidth='90%'>
                     <ButtonTitle>Salvar</ButtonTitle>
                 </Button>
 

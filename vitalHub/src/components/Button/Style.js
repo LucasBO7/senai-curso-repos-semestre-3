@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import { FontAwesome6 } from "@expo/vector-icons";
 
 // Botão
 export const Button = styled.TouchableOpacity`
   border: 1px solid transparent;
   background-color: #496bba;
-  width: 90%;
+  width: ${props => props.btnWidth};
   height: 44px;
   border-radius: 5px;
   flex-direction: row;

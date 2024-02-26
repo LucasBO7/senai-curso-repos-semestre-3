@@ -1,9 +1,11 @@
 import React from 'react'
-import { PerfilInput } from '../PerfilInput'
 import { ModalContainer, OptionInputText, OptionInputContainer, ModalContent, QuestionText, OptionsList } from './Style'
 import { TitleSecondary } from '../Title/Style'
+import { InputTag, TextInput } from '../Input/Style'
+import { Button, ButtonTitle } from '../Button/Style'
+import { LinkSecondary } from '../Link/Style'
 
-export const ModalScheduleConsult = ({ isModalVisible, selectedButton }) => {
+export const ModalScheduleConsult = ({ isModalVisible, selectedButton = 'rotina' }) => {
     return (
         <ModalContainer isVisible={isModalVisible}>
             <ModalContent>
@@ -15,25 +17,31 @@ export const ModalScheduleConsult = ({ isModalVisible, selectedButton }) => {
                 {/* Question answers */}
                 <QuestionText>Qual o nível da consulta</QuestionText>
                 <OptionsList>
-                    <OptionInputContainer onPress={selectedButton}>
-                        <OptionInputText>Rotina</OptionInputText>
+                    <OptionInputContainer isSelected={selectedButton == 'rotina' ? true : false}>
+                        <OptionInputText isSelected={selectedButton == 'rotina' ? true : false}>Rotina</OptionInputText>
                     </OptionInputContainer>
 
-                    <OptionInputContainer onPress={selectedButton}>
-                        <OptionInputText>Exame</OptionInputText>
+                    <OptionInputContainer isSelected={selectedButton == 'exame' ? true : false}>
+                        <OptionInputText isSelected={selectedButton == 'exame' ? true : false}>Exame</OptionInputText>
                     </OptionInputContainer>
 
-                    <OptionInputContainer onPress={selectedButton}>
-                        <OptionInputText>Urgência</OptionInputText>
+                    <OptionInputContainer isSelected={selectedButton == 'urgencia' ? true : false}>
+                        <OptionInputText isSelected={selectedButton == 'urgencia' ? true : false}>Urgência</OptionInputText>
                     </OptionInputContainer>
                 </OptionsList>
 
                 {/* Input Text */}
                 <TextInput>
-                    <Label></Label>
+                    <QuestionText>Informe a localização desejada</QuestionText>
 
-                    <Input />
+                    <InputTag placeholder="Informe a localização" />
                 </TextInput>
+
+                <Button width='100%'>
+                    <ButtonTitle>Continuar</ButtonTitle>
+                </Button>
+
+                <LinkSecondary>Cancelar</LinkSecondary>
             </ModalContent>
         </ModalContainer>
     )

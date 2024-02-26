@@ -26,3 +26,26 @@ export const InputNumber = styled(Input).attrs({
     font-size: 40px;
     line-height: 52px;
 `;
+
+export const InputTag = styled.TextInput.attrs({
+    placeholderTextColor: '#34898F'
+})`
+    justify-content: center;
+    align-items: center;
+
+    height: 53px;
+    padding: 0px 16px;
+
+    border: 2px solid #60BFC5;
+    border-radius: 5px;
+    
+    font-family: 'MontserratAlternates_600SemiBold';
+    font-size: 14px;
+    color: #34898F;
+`;
+
+export const TextInput = styled.View`
+    justify-content: space-between;
+    height: 80px;
+    margin-top: 21px;
+`;

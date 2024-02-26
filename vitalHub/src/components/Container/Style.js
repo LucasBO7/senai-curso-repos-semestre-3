@@ -99,3 +99,8 @@ export const PatientInfosBottom = styled.View`
   justify-content: space-between;
   align-items: center;
 `;
+
+export const CardsList = styled.View`
+  width: 100%;
+  /* background-color: red; */
+`;

@@ -47,3 +47,13 @@ export const PerfilEmail = styled.Text`
 export const PatientName = styled(PerfilName)`
   margin-bottom: -10px;
 `;
+
+export const CardTitle = styled(PerfilName)`
+
+`;
+
+export const RateText = styled.Text`
+  font-family: "MontserratAlternates_600SemiBold";
+  font-size: 14px;
+  color: #F9A620;
+`;

@@ -38,6 +38,7 @@ export const ModalPatientRelatory = ({
         </RowContainer>
 
         <Button
+          btnWidth='90%'
           title="Login"
           onPress={() => {
             navigation.navigate("Login");

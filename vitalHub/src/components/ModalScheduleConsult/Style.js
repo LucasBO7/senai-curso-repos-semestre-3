@@ -1,5 +1,5 @@
 import Modal from "react-native-modal";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 // Modal
 export const ModalContainer = styled(Modal).attrs({
@@ -11,8 +11,8 @@ export const ModalContainer = styled(Modal).attrs({
     margin: 0;
 `;
 export const ModalContent = styled.View`
-    /* align-items: center; */
     background-color: white;
+    border-radius: 10px;
     width: 100%;
     height: 403px;
     padding: 28px 20px;
@@ -33,21 +33,24 @@ export const OptionsList = styled.View`
 
 // 'Checkbox' Button
 export const OptionInputContainer = styled.TouchableHighlight`
-    /* background-color: orange; */
     justify-content: center;
     align-items: center;
     padding: 0px 17px;
     height: 50px;
-    /* width: 28%; */
 
     border: 2px solid #60BFC5;
     border-radius: 5px;
+
+    ${props => props.isSelected
+        ? css`background-color: #60BFC5; color: #FBFBFB`
+        : css`background-color: transparent`
+    }
 `;
 
 // 'CheckBux' Button -> Text
 export const OptionInputText = styled.Text`
     font-family: 'MontserratAlternates_600SemiBold';
     font-size: 14px;
-    color: #34898F;
+    color: ${props => props.isSelected == true ? 'white' : '#34898F'};
     line-height: 21px;
     `;

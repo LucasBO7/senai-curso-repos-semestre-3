@@ -23,7 +23,7 @@ export default function RecuperarSenha() {
 
       <Input placeholder="Usuário ou E-mail..." />
 
-      <Button>
+      <Button btnWidth='90%'>
         <ButtonTitle>Continuar</ButtonTitle>
       </Button>
     </Container>

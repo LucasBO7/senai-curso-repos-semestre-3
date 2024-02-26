@@ -30,7 +30,7 @@ export default function VerificacaoEmail() {
         <InputNumber placeholder="0" />
       </InputNumberContainer>
 
-      <Button>
+      <Button btnWidth='90%'>
         <ButtonTitle>Entrar</ButtonTitle>
       </Button>
 

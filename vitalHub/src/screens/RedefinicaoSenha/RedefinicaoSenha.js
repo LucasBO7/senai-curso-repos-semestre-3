@@ -24,7 +24,7 @@ export default function RedefinicaoSenha() {
       <Input placeholder="Nova senha" />
       <Input placeholder="Confirmar nova senha" />
 
-      <Button>
+      <Button btnWidth='90%'>
         <ButtonTitle>Confirmar nova senha</ButtonTitle>
       </Button>
     </Container>

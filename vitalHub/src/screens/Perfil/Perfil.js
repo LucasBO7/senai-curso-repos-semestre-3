@@ -44,11 +44,11 @@ export default function Perfil() {
                         containerWidth="40%" />
                 </PerfilCityInputsContainer>
 
-                <Button>
+                <Button btnWidth='90%'>
                     <ButtonTitle>Salvar</ButtonTitle>
                 </Button>
 
-                <Button>
+                <Button btnWidth='90%'>
                     <ButtonTitle>Editar</ButtonTitle>
                 </Button>
 

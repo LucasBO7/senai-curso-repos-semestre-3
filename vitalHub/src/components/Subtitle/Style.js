@@ -24,3 +24,7 @@ export const QueryCategory = styled.Text`
   font-size: 14px;
   color: #8c8a97;
 `;
+
+export const CardSubtitle = styled(QueryCategory)`
+  color: #4E4B59 !important;
+`;
