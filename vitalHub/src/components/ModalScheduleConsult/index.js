@@ -37,7 +37,7 @@ export const ModalScheduleConsult = ({ isModalVisible, selectedButton = 'rotina'
                     <InputTag placeholder="Informe a localização" />
                 </TextInput>
 
-                <Button width='100%'>
+                <Button btnWidth='100%'>
                     <ButtonTitle>Continuar</ButtonTitle>
                 </Button>
 

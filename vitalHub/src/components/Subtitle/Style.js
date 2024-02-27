@@ -28,3 +28,9 @@ export const QueryCategory = styled.Text`
 export const CardSubtitle = styled(QueryCategory)`
   color: #4E4B59 !important;
 `;
+
+export const CardSubtitleSecond = styled.Text`
+  font-family: "Quicksand_500Medium";
+  font-size: 14px;
+  color: #8C8A97;
+`;

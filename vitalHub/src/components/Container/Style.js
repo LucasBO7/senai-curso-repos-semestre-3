@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import DropShadow from "react-native-drop-shadow";
 
 export const Container = styled.SafeAreaView`
   /* Faz o elemento ocupar toda a tela */
@@ -102,5 +101,6 @@ export const PatientInfosBottom = styled.View`
 
 export const CardsList = styled.View`
   width: 100%;
+  height: 100%;
   /* background-color: red; */
 `;

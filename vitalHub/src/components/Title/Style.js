@@ -9,6 +9,7 @@ export const Title = styled.Text`
 
 export const TitleSecondary = styled(Title)`
   text-align: center;
+  margin-top: 30px;
 `;
 
 // Perfil

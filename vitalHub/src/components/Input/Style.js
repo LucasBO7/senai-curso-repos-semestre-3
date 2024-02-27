@@ -47,5 +47,6 @@ export const InputTag = styled.TextInput.attrs({
 export const TextInput = styled.View`
     justify-content: space-between;
     height: 80px;
+    width: 90%;
     margin-top: 21px;
 `;
