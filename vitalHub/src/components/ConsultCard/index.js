@@ -13,6 +13,7 @@ import { ConsultCardContainer } from "../Container/Style";
 
 export const ConsultCard = ({
   situacao = "Pendentes",
+  openScreen,
   onCancelPress,
   onAppointmentPress,
   patient
@@ -51,11 +52,15 @@ export const ConsultCard = ({
                 <LinkThird onPress={() => { onCancelPress() }}>
                   <LinkThirdText textColor="#C81D25">Cancelar</LinkThirdText>
                 </LinkThird>
-              ) : (
+              ) : openScreen == "medic" ? (
                 <LinkThird onPress={() => { onAppointmentPress() }}>
                   <LinkThirdText textColor="#344F8F">Ver prontuário</LinkThirdText>
                 </LinkThird>
-              )
+              ) : openScreen == "patient" ? (
+                <LinkThird onPress={() => { onAppointmentPress() }}>
+                  <LinkThirdText textColor="#344F8F">Ver Consulta</LinkThirdText>
+                </LinkThird>
+              ) : (null)
           }
         </PatientInfosBottom>
       </PatientInfosContainer >

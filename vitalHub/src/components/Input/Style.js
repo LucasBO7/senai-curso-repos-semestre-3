@@ -33,6 +33,7 @@ export const InputTag = styled.TextInput.attrs({
     justify-content: center;
     align-items: center;
 
+    /* width: 100%; */
     height: 53px;
     padding: 0px 16px;
 
@@ -47,6 +48,6 @@ export const InputTag = styled.TextInput.attrs({
 export const TextInput = styled.View`
     justify-content: space-between;
     height: 80px;
-    width: 90%;
+    width: 100%;
     margin-top: 21px;
 `;

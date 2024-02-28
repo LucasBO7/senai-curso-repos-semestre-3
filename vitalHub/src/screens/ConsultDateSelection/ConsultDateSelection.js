@@ -7,10 +7,27 @@ import { QuestionText } from '../../components/ModalScheduleConsult/Style'
 import { Button, ButtonTitle } from '../../components/Button/Style'
 import { LinkSecondary } from '../../components/Link/Style'
 import { Dropdown } from '../../components/Dropdown'
-import DropDownPicker from 'react-native-dropdown-picker';
 import { ModalAppointmentConfirmation } from '../../components/ModalAppointmentConfirmation'
 
 export const ConsultDateSelection = () => {
+    const consulta = {
+        id: 0,
+        date: "1 de Novembro de 2023",
+        doctor: {
+            id: 0,
+            name: "Dra Alessandra",
+            specialty: "Demartologa, Esteticista"
+        },
+        local: "São Paulo, SP",
+        type: "Rotina"
+    };
+    const [isModalVisible, setIsModalVisible] = useState(false);
+
+    const onModalVisibilityChange = () => {
+        isModalVisible ? setIsModalVisible(false) : setIsModalVisible(true);
+    }
+
+
     return (
         <Container>
             <TitleSecondary>Selecionar data</TitleSecondary>
@@ -24,13 +41,17 @@ export const ConsultDateSelection = () => {
                 {/* <InputTag placeholder="Informe a localização" /> */}
             </TextInput>
 
-            <Button btnWidth='90%'>
+            <Button onPress={onModalVisibilityChange} btnWidth='90%'>
                 <ButtonTitle>Continuar</ButtonTitle>
             </Button>
 
             <LinkSecondary>Cancelar</LinkSecondary>
 
-            <ModalAppointmentConfirmation />
+            <ModalAppointmentConfirmation
+                consult={consulta}
+                isVisible={isModalVisible}
+                cancelModalFunction={onModalVisibilityChange}
+            />
         </Container>
     )
 }

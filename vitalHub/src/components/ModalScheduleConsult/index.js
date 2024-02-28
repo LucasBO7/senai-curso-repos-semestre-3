@@ -5,7 +5,16 @@ import { InputTag, TextInput } from '../Input/Style'
 import { Button, ButtonTitle } from '../Button/Style'
 import { LinkSecondary } from '../Link/Style'
 
-export const ModalScheduleConsult = ({ isModalVisible, selectedButton = 'rotina' }) => {
+export const ModalScheduleConsult = ({
+    isModalVisible,
+    setIsModalVisible,
+    selectedButton = '',
+    setSelectedButton,
+}) => {
+    const toggleCancelModalSchedule = () => {
+        setIsModalVisible(false);
+    }
+
     return (
         <ModalContainer isVisible={isModalVisible}>
             <ModalContent>
@@ -17,15 +26,21 @@ export const ModalScheduleConsult = ({ isModalVisible, selectedButton = 'rotina'
                 {/* Question answers */}
                 <QuestionText>Qual o nível da consulta</QuestionText>
                 <OptionsList>
-                    <OptionInputContainer isSelected={selectedButton == 'rotina' ? true : false}>
+                    <OptionInputContainer
+                        onPress={() => { setSelectedButton('rotina') }}
+                        isSelected={selectedButton == 'rotina' ? true : false}>
                         <OptionInputText isSelected={selectedButton == 'rotina' ? true : false}>Rotina</OptionInputText>
                     </OptionInputContainer>
 
-                    <OptionInputContainer isSelected={selectedButton == 'exame' ? true : false}>
+                    <OptionInputContainer
+                        onPress={() => { setSelectedButton('exame') }}
+                        isSelected={selectedButton == 'exame' ? true : false}>
                         <OptionInputText isSelected={selectedButton == 'exame' ? true : false}>Exame</OptionInputText>
                     </OptionInputContainer>
 
-                    <OptionInputContainer isSelected={selectedButton == 'urgencia' ? true : false}>
+                    <OptionInputContainer
+                        onPress={() => { setSelectedButton('urgencia') }}
+                        isSelected={selectedButton == 'urgencia' ? true : false}>
                         <OptionInputText isSelected={selectedButton == 'urgencia' ? true : false}>Urgência</OptionInputText>
                     </OptionInputContainer>
                 </OptionsList>
@@ -41,7 +56,7 @@ export const ModalScheduleConsult = ({ isModalVisible, selectedButton = 'rotina'
                     <ButtonTitle>Continuar</ButtonTitle>
                 </Button>
 
-                <LinkSecondary>Cancelar</LinkSecondary>
+                <LinkSecondary onPress={toggleCancelModalSchedule}>Cancelar</LinkSecondary>
             </ModalContent>
         </ModalContainer>
     )

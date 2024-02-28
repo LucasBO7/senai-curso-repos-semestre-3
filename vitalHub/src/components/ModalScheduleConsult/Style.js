@@ -14,7 +14,7 @@ export const ModalContent = styled.View`
     background-color: white;
     border-radius: 10px;
     width: 100%;
-    height: 403px;
+    height: 430px;
     padding: 28px 20px;
 `;
 
@@ -32,7 +32,9 @@ export const OptionsList = styled.View`
 `;
 
 // 'Checkbox' Button
-export const OptionInputContainer = styled.TouchableHighlight`
+export const OptionInputContainer = styled.TouchableHighlight.attrs({
+    underlayColor: "#60BFC5",
+})`
     justify-content: center;
     align-items: center;
     padding: 0px 17px;

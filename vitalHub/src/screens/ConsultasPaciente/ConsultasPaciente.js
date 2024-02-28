@@ -33,6 +33,7 @@ export const ConsultasPaciente = () => {
   const [isCancelModalVisible, setIsCancelModalVisible] = useState(false);
   const [isScheduleConsultModalVisible, setIsScheduleConsultModalVisible] = useState(false);
   const [activatedPage, setActivatedPage] = useState("agendadas");
+  const [selectedButton, setSelectedButton] = useState("");
 
   const [patients, setPatients] = useState({
     id: 0,
@@ -49,7 +50,6 @@ export const ConsultasPaciente = () => {
       ? setIsCancelModalVisible(false)
       : setIsCancelModalVisible(true);
   };
-
   const toggleScheduleConsultModal = () => {
     isScheduleConsultModalVisible ? setIsScheduleConsultModalVisible(false) : setIsScheduleConsultModalVisible(true);
   }
@@ -96,6 +96,7 @@ export const ConsultasPaciente = () => {
                   <ConsultCard
                     situacao={item.situacao}
                     patient={patients}
+                    openScreen="patient"
                     // Passar os set das constantes e chamar função no componente
                     onCancelPress={toggleCancelModal}
                     onAppointmentPress={toggleModal}
@@ -110,7 +111,7 @@ export const ConsultasPaciente = () => {
           </ScrollView> */}
         </ConsultListContainer>
 
-        <ScheduleConsultButton onPress={toggleScheduleConsultModal} />
+        <ScheduleConsultButton onPressBtn={toggleScheduleConsultModal} />
       </ConsultasMedicoContainer>
 
       <Footer
@@ -119,8 +120,10 @@ export const ConsultasPaciente = () => {
       />
 
       <ModalScheduleConsult
-        isModalVisible={true}
-        selectedButton={'rotina'}
+        isModalVisible={isScheduleConsultModalVisible}
+        setIsModalVisible={setIsScheduleConsultModalVisible}
+        selectedButton={selectedButton}
+        setSelectedButton={setSelectedButton}
       />
 
       <ModalConfirmation

@@ -102,6 +102,7 @@ export const ConsultasMedico = () => {
                   <ConsultCard
                     situacao={item.situacao}
                     patient={patients}
+                    openScreen={"medic"}
                     // Passar os set das constantes e chamar função no componente
                     onCancelPress={toggleCancelModal}
                     onAppointmentPress={toggleModal}

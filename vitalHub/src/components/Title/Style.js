@@ -58,3 +58,8 @@ export const RateText = styled.Text`
   font-size: 14px;
   color: #F9A620;
 `;
+
+export const ConsultTitle = styled.Text`
+  font-family: "Quicksand_600SemiBold";
+  font-size: 16px;
+`;
