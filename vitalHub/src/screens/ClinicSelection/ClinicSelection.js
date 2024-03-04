@@ -52,10 +52,12 @@ export const ClinicSelection = () => {
       operatingDays: "Seg-Sab",
     },
   ];
-  const [isCardSelected, setIsCardSelected] = useState(false);
+  // const [isCardSelected, setIsCardSelected] = useState(false);
+  const [selectedCardId, setSelectedCardId] = useState(0);
 
-  const handleSelectedCard = () => {
-    isCardSelected ? setIsCardSelected(false) : setIsCardSelected(true);
+  const handleSelectedCard = (id) => {
+    setSelectedCardId(id);
+    // selectedCardId == id ? setIsCardSelected(true) : setIsCardSelected(false);
   };
 
   return (
@@ -71,7 +73,7 @@ export const ClinicSelection = () => {
               return (
                 <ClinicCard
                   clinic={item}
-                  isSelected={isCardSelected}
+                  selectedCardId={selectedCardId}
                   onCardPress={handleSelectedCard}
                 />
               );

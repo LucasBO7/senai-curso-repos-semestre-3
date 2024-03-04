@@ -1,6 +1,7 @@
 import React from "react";
 import {
   CardContainer,
+  CardContent,
   ElementsContainer,
   OperatingDaysContainer,
   OperatingDaysText,
@@ -12,11 +13,12 @@ import { CardSubtitle } from "../Subtitle/Style";
 import { Entypo } from "@expo/vector-icons";
 import { AntDesign } from "@expo/vector-icons";
 
-export const ClinicCard = ({ clinic, isSelected, onCardPress }) => {
+export const ClinicCard = ({ clinic, selectedCardId, onCardPress }) => {
   return (
     <CardContainer
+      isSelected={selectedCardId == clinic.id ? true : false}
       onPress={() => {
-        onCardPress();
+        onCardPress(clinic.id);
       }}
     >
       <CardContent>

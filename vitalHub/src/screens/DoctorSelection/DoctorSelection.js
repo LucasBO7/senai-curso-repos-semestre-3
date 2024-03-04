@@ -40,10 +40,10 @@ export const DoctorSelection = () => {
     },
   ];
 
-  const [isCardSelected, setIsCardSelected] = useState(false);
+  const [selectedCardId, setSelectedCardId] = useState();
 
-  const handleCardSelected = () => {
-    isCardSelected ? setIsCardSelected(false) : setIsCardSelected(true);
+  const handleCardSelected = (id) => {
+    setSelectedCardId(id);
   };
 
   return (
@@ -59,7 +59,7 @@ export const DoctorSelection = () => {
               return (
                 <DoctorCard
                   doctor={item}
-                  isSelected={isCardSelected}
+                  selectedCard={selectedCardId}
                   onCardSelected={handleCardSelected}
                 />
               );

@@ -9,6 +9,7 @@ export const DoctorContainer = styled.TouchableHighlight.attrs({
   shadowOpacity: 0.15,
   shadowRadius: 3.84,
   elevation: 8,
+  underlayColor: "transparent"
 })`
   justify-content: center;
   align-items: center;
@@ -25,4 +26,12 @@ export const DoctorContainer = styled.TouchableHighlight.attrs({
   margin-bottom: 12px;
 
   ${(props) => (props.isSelected ? `border: 2px solid #496BBA;` : ``)};
+`;
+
+export const DoctorContent = styled.View`
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+
+  width: 90%;
 `;

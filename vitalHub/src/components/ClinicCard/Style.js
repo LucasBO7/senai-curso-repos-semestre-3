@@ -9,6 +9,7 @@ export const CardContainer = styled.TouchableHighlight.attrs({
   shadowOpacity: 0.15,
   shadowRadius: 3.84,
   elevation: 8,
+  underlayColor: "#EBEBEB"
 })`
   justify-content: center;
   align-items: center;
