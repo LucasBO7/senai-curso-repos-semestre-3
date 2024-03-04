@@ -24,6 +24,8 @@ import { ConsultasMedico } from "./src/screens/ConsultasMedico/ConsultasMedico";
 import { ClinicSelection } from "./src/screens/ClinicSelection/ClinicSelection";
 import { DoctorSelection } from "./src/screens/DoctorSelection/DoctorSelection";
 import { ConsultDateSelection } from "./src/screens/ConsultDateSelection/ConsultDateSelection";
+import { LocalConsulta } from "./src/screens/LocalConsulta/LocalConsulta";
+import { VisualizarPrescricao } from "./src/screens/VisualizarPrescricao/VisualizarPrescricao";
 
 const Stack = createNativeStackNavigator();
 
@@ -51,9 +53,11 @@ export default function App() {
     // options: titulo da tela
 
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{
-        headerShown: true
-      }}>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: true,
+        }}
+      >
         <Stack.Screen
           name="Navegacao"
           component={Navegacao}
@@ -119,6 +123,16 @@ export default function App() {
           name="Prontuario"
           component={Prontuario}
           options={{ title: "Prontuario" }}
+        />
+        <Stack.Screen
+          name="LocalConsulta"
+          component={LocalConsulta}
+          options={{ title: "LocalConsulta" }}
+        />
+        <Stack.Screen
+          name="VisualizarPrescricao"
+          component={VisualizarPrescricao}
+          options={{ title: "VisualizarPrescricao" }}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -49,17 +49,20 @@ export const PatientName = styled(PerfilName)`
   margin-bottom: -10px;
 `;
 
-export const CardTitle = styled(PerfilName)`
-
-`;
+export const CardTitle = styled(PerfilName)``;
 
 export const RateText = styled.Text`
   font-family: "MontserratAlternates_600SemiBold";
   font-size: 14px;
-  color: #F9A620;
+  color: #f9a620;
 `;
 
 export const ConsultTitle = styled.Text`
   font-family: "Quicksand_600SemiBold";
   font-size: 16px;
+`;
+
+export const ClinicLocalInfosTitle = styled(Title).attrs({})`
+  color: #000000;
+  text-align: center;
 `;

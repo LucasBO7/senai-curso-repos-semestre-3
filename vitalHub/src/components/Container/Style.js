@@ -102,5 +102,11 @@ export const PatientInfosBottom = styled.View`
 export const CardsList = styled.View`
   width: 100%;
   height: 100%;
-  /* background-color: red; */
+`;
+
+export const ClinicInfosContainer = styled.View`
+  width: 100%;
+  height: 100%;
+  padding: 30px 20px;
+  border-radius: 15px 15px 0px 0px;
 `;

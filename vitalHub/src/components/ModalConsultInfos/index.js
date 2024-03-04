@@ -8,43 +8,40 @@ import { Subtitle } from "../Subtitle/Style";
 import { Title } from "../Title/Style";
 import { Button, ButtonTitle } from "../Button/Style";
 import { LinkSecondary } from "../Link/Style";
-import { RowContainer } from "./Style";
 import { ImagePatient } from "../Image/Style";
+import { RowContainer, SubtitleConsultModal } from "./Style";
 
-export const ModalPatientRelatory = ({
+export const ModalConsultInfos = ({
   navigation,
-  imgSource,
   isModalVisible,
   cancelModalFunction,
-  patientName,
-  patientAge,
-  patientEmail,
+  imgSource,
+  doctorName,
+  doctorEspeciality,
+  doctorCRM,
 }) => {
   return (
     <ModalContainer isVisible={isModalVisible}>
       <ModalConfirmationContainer containerHeight="476px">
-        <ImagePatient
-          source={require("../../assets/images/userPerfilImg.png")}
-        />
+        <ImagePatient source={imgSource} />
 
         {/* Título */}
-        <Title>{patientName}</Title>
+        <Title>{doctorName}</Title>
 
         {/* Descrição */}
         <RowContainer>
-          <Subtitle>
-            {patientAge} {patientEmail}
-          </Subtitle>
+          <SubtitleConsultModal>{doctorEspeciality}</SubtitleConsultModal>
+          <SubtitleConsultModal>{doctorCRM}</SubtitleConsultModal>
         </RowContainer>
 
         <Button
-          btnWidth='90%'
+          btnWidth="90%"
           title="Login"
           onPress={() => {
             navigation.navigate("Login");
           }}
         >
-          <ButtonTitle>Inserir prontuário</ButtonTitle>
+          <ButtonTitle>Ver local da consulta</ButtonTitle>
         </Button>
 
         <LinkSecondary onPress={cancelModalFunction}>Cancelar</LinkSecondary>

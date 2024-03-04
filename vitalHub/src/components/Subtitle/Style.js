@@ -26,17 +26,21 @@ export const QueryCategory = styled.Text`
 `;
 
 export const CardSubtitle = styled(QueryCategory)`
-  color: #4E4B59 !important;
+  color: #4e4b59 !important;
+`;
+
+export const LocalCardSubtitle = styled(CardSubtitle)`
+  text-align: center;
 `;
 
 export const CardSubtitleSecond = styled.Text`
   font-family: "Quicksand_500Medium";
   font-size: 14px;
-  color: #8C8A97;
+  color: #8c8a97;
 `;
 
 export const ConsultSubtitle = styled.Text`
   font-family: "Quicksand_500Medium";
   font-size: 14px;
-  color: #4E4B59;
+  color: #4e4b59;
 `;

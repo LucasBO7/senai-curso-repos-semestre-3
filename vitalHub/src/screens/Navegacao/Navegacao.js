@@ -51,6 +51,14 @@ export const Navegacao = ({ navigation }) => {
                 title="Prontuário"
                 // Ao ser pressionado, navega para a screen "Prontuario"
                 onPress={() => { navigation.navigate("Prontuario") }} />
+            <Button
+                title="Mapa do local da consulta"
+                // Ao ser pressionado, navega para a screen "Prontuario"
+                onPress={() => { navigation.navigate("LocalConsulta") }} />
+            <Button
+                title="Ver prescrição"
+                // Ao ser pressionado, navega para a screen "Prontuario"
+                onPress={() => { navigation.navigate("VisualizarPrescricao") }} />
         </View>
     );
 }

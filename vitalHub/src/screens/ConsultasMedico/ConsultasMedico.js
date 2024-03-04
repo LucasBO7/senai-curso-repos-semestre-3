@@ -26,7 +26,7 @@ import { ScrollView } from "react-native";
 import { ModalConfirmation } from "../../components/ModalConfirmation";
 import { ListComponent } from "../../components/List/List";
 import { ConsultCard } from "../../components/ConsultCard";
-import { ModalPatientRelatory } from "../../components/ModalPatientRelatory";
+import { ModalRelatory } from "../../components/ModalRelatory";
 
 const Consultas = [
   { id: 1, nome: "Carlos", situacao: "Pendentes" },
@@ -37,26 +37,25 @@ const Consultas = [
 ];
 
 export const ConsultasMedico = () => {
-
   const [statusLista, setStatusLista] = useState("Pendentes");
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isCancelModalVisible, setIsCancelModalVisible] = useState(false);
   const [activatedPage, setActivatedPage] = useState("agendadas");
 
-  const [patients, setPatients] = useState(
-    {
-      id: 0,
-      name: 'Vinicius',
-      age: 21,
-      perfilImg: '...',
-    }
-  );
+  const [patients, setPatients] = useState({
+    id: 0,
+    name: "Vinicius",
+    age: 21,
+    perfilImg: "...",
+  });
 
   const toggleModal = () => {
     isModalVisible ? setIsModalVisible(false) : setIsModalVisible(true);
   };
   const toggleCancelModal = () => {
-    isCancelModalVisible ? setIsCancelModalVisible(false) : setIsCancelModalVisible(true);
+    isCancelModalVisible
+      ? setIsCancelModalVisible(false)
+      : setIsCancelModalVisible(true);
   };
 
   const activatePageFunction = (activatedPageName) => {
@@ -65,7 +64,10 @@ export const ConsultasMedico = () => {
 
   return (
     <Container>
-      <Header />
+      <Header
+        userImg={require("../../assets/images/doctorImg.png")}
+        userName={"Dr. Claudio"}
+      />
 
       {/* Content Container */}
       <ConsultasMedicoContainer>
@@ -95,7 +97,6 @@ export const ConsultasMedico = () => {
           <ListComponent
             data={Consultas}
             keyExtractor={(item) => item.id}
-
             renderItem={({ item }) => {
               if (statusLista == item.situacao) {
                 return (
@@ -107,15 +108,11 @@ export const ConsultasMedico = () => {
                     onCancelPress={toggleCancelModal}
                     onAppointmentPress={toggleModal}
                   />
-                )
+                );
               }
-            }
-            }
+            }}
             showsHorizontalScrollIndicator={false}
           />
-
-          {/* <ScrollView scrollEnabled nestedScrollEnabled>
-          </ScrollView> */}
         </ConsultListContainer>
       </ConsultasMedicoContainer>
 
@@ -129,13 +126,13 @@ export const ConsultasMedico = () => {
         cancelModalFunction={toggleCancelModal}
       />
 
-      <ModalPatientRelatory
+      <ModalRelatory
         isModalVisible={isModalVisible}
         cancelModalFunction={toggleModal}
-        imgSource={'src/assets/images/userPerfilImg'}
-        patientName={'Niccole Sarga'}
-        patientAge={'22 anos'}
-        patientEmail={'niccole.sarga@gmail.com'}
+        imgSource={require("../../assets/images/userPerfilImg.png")}
+        patientName={"Niccole Sarga"}
+        patientAge={"22 anos"}
+        patientEmail={"niccole.sarga@gmail.com"}
       />
     </Container>
   );

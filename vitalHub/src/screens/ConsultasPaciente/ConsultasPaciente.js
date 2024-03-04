@@ -14,9 +14,10 @@ import { Footer } from "../../components/Footer";
 import { ModalConfirmation } from "../../components/ModalConfirmation";
 import { ListComponent } from "../../components/List/List";
 import { ConsultCard } from "../../components/ConsultCard";
-import { ModalPatientRelatory } from "../../components/ModalPatientRelatory";
+import { ModalRelatory } from "../../components/ModalRelatory";
 import { ScheduleConsultButton } from "../../components/ScheduleConsultButton";
 import { ModalScheduleConsult } from "../../components/ModalScheduleConsult";
+import { ModalConsultInfos } from "../../components/ModalConsultInfos";
 
 const Consultas = [
   { id: 1, nome: "Carlos", situacao: "Pendentes" },
@@ -31,7 +32,8 @@ export const ConsultasPaciente = () => {
 
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isCancelModalVisible, setIsCancelModalVisible] = useState(false);
-  const [isScheduleConsultModalVisible, setIsScheduleConsultModalVisible] = useState(false);
+  const [isScheduleConsultModalVisible, setIsScheduleConsultModalVisible] =
+    useState(false);
   const [activatedPage, setActivatedPage] = useState("agendadas");
   const [selectedButton, setSelectedButton] = useState("");
 
@@ -51,8 +53,10 @@ export const ConsultasPaciente = () => {
       : setIsCancelModalVisible(true);
   };
   const toggleScheduleConsultModal = () => {
-    isScheduleConsultModalVisible ? setIsScheduleConsultModalVisible(false) : setIsScheduleConsultModalVisible(true);
-  }
+    isScheduleConsultModalVisible
+      ? setIsScheduleConsultModalVisible(false)
+      : setIsScheduleConsultModalVisible(true);
+  };
 
   const activatePageFunction = (activatedPageName) => {
     setActivatedPage(activatedPageName);
@@ -60,7 +64,10 @@ export const ConsultasPaciente = () => {
 
   return (
     <Container>
-      <Header />
+      <Header
+        userImg={require("../../assets/images/userPerfilImg.png")}
+        userName={"Cláudio José"}
+      />
 
       {/* Content Container */}
       <ConsultasMedicoContainer>
@@ -106,9 +113,6 @@ export const ConsultasPaciente = () => {
             }}
             showsHorizontalScrollIndicator={false}
           />
-
-          {/* <ScrollView scrollEnabled nestedScrollEnabled>
-          </ScrollView> */}
         </ConsultListContainer>
 
         <ScheduleConsultButton onPressBtn={toggleScheduleConsultModal} />
@@ -131,13 +135,13 @@ export const ConsultasPaciente = () => {
         cancelModalFunction={toggleCancelModal}
       />
 
-      <ModalPatientRelatory
+      <ModalConsultInfos
         isModalVisible={isModalVisible}
         cancelModalFunction={toggleModal}
-        imgSource={"src/assets/images/userPerfilImg"}
-        patientName={"Niccole Sarga"}
-        patientAge={"22 anos"}
-        patientEmail={"niccole.sarga@gmail.com"}
+        imgSource={require("../../assets/images/doctorImg.png")}
+        doctorName={"Dr. Claudio"}
+        doctorEspeciality={"Cliníco geral"}
+        doctorCRM={"CRM-15286"}
       />
     </Container>
   );
