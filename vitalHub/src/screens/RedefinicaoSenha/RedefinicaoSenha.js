@@ -11,7 +11,7 @@ import { HighlightedText, Subtitle } from "../../components/Subtitle/Style";
 import { Input, InputNumber } from "../../components/Input/Style";
 import { Button, ButtonTitle } from "../../components/Button/Style";
 
-export default function RedefinicaoSenha() {
+export default function RedefinicaoSenha({ navigation }) {
   return (
     <Container>
       <ReturnButton iconName="close" />
@@ -25,7 +25,7 @@ export default function RedefinicaoSenha() {
       <Input placeholder="Confirmar nova senha" />
 
       <Button btnWidth='90%'>
-        <ButtonTitle>Confirmar nova senha</ButtonTitle>
+        <ButtonTitle onPress={() => navigation.replace("CadastroConta")}>Confirmar nova senha</ButtonTitle>
       </Button>
     </Container>
   );

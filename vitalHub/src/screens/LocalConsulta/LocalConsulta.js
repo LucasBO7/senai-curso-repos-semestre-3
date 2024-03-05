@@ -4,6 +4,7 @@ import {
   PerfilCityInputsContainer,
 } from "../../components/Container/Style";
 import { LocalMap } from "../../components/Image/Style";
+import { LinkSecondary } from "../../components/Link/Style";
 import { PerfilInput } from "../../components/PerfilInput";
 import { LocalCardSubtitle } from "../../components/Subtitle/Style";
 import { ClinicLocalInfosTitle } from "../../components/Title/Style";
@@ -15,23 +16,13 @@ export const LocalConsulta = () => {
     <Container>
       <LocalMap source={require("../../assets/images/map-local.png")} />
 
-      {/* <MapView
-        initialRegion={{
+      <MapView
+        region={{
           latitude: 37.78825,
           longitude: -122.4324,
           latitudeDelta: 0.0922,
           longitudeDelta: 0.0421,
         }}
-      /> */}
-
-      <MapView
-        region={
-          {
-            latitude: 37.78825,
-            longitude: -122.4324,
-            latitudeDelta: 0.0922,
-            longitudeDelta: 0.0421,
-          }}
         onRegionChange={{
           latitude: 37.78825,
           longitude: -122.4324,
@@ -39,12 +30,6 @@ export const LocalConsulta = () => {
           longitudeDelta: 0.0421,
         }}
       >
-        {/* <Marker
-          key={index}
-          coordinate={marker.latlng}
-          title={marker.title}
-          description={marker.description}
-        /> */}
       </MapView>
 
       <ClinicInfosContainer>
@@ -55,13 +40,13 @@ export const LocalConsulta = () => {
           inputLabel="Endereço"
           inputPlaceholder="Rua Exemplo, 000"
           containerWidth="90%"
-          inputType={"numeric"}
         />
         <PerfilCityInputsContainer>
           <PerfilInput
             inputLabel="Número"
             inputPlaceholder="000"
             containerWidth="40%"
+            inputType={"numeric"}
           />
           <PerfilInput
             inputLabel="Bairro"
@@ -69,6 +54,7 @@ export const LocalConsulta = () => {
             containerWidth="40%"
           />
         </PerfilCityInputsContainer>
+        <LinkSecondary>Voltar</LinkSecondary>
       </ClinicInfosContainer>
     </Container >
   );

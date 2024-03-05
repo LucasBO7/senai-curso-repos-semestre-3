@@ -10,7 +10,7 @@ import { InputNumberContainer } from "../../components/Container/Style";
 import { Button, ButtonLink, ButtonTitle } from "../../components/Button/Style";
 import { LinkSecondary } from "../../components/Link/Style";
 
-export default function VerificacaoEmail() {
+export default function VerificacaoEmail({ navigation }) {
   return (
     <Container>
       <ReturnButton iconName="close" />
@@ -30,7 +30,7 @@ export default function VerificacaoEmail() {
         <InputNumber placeholder="0" />
       </InputNumberContainer>
 
-      <Button btnWidth='90%'>
+      <Button onPress={() => navigation.replace("RedefinicaoSenha")} btnWidth='90%'>
         <ButtonTitle>Entrar</ButtonTitle>
       </Button>
 

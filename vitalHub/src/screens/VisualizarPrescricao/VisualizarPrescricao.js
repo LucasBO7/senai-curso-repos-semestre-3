@@ -35,12 +35,15 @@ export const VisualizarPrescricao = ({ cancelModalFunction }) => {
           inputPlaceholder="Prescrição médica..."
           containerWidth="90%"
         />
-        <PerfilInput
+        <FileInputContainer>
+          
+        </FileInputContainer>
+        {/* <PerfilInput
           inputLabel="Exames médicos"
           inputPlaceholder="Prescrição médica..."
           containerWidth="90%"
           inputType={"file"}
-        />
+        /> */}
         <ImgSubmitButton />
 
         <Input

@@ -7,7 +7,7 @@ import { Input } from "../../components/Input/Style";
 import { Button, ButtonTitle } from "../../components/Button/Style";
 import { ReturnButton } from "../../components/ReturnButton/index";
 
-export default function RecuperarSenha() {
+export default function RecuperarSenha({ navigation }) {
   return (
     <Container>
       <ReturnButton iconName="arrowleft" />
@@ -23,7 +23,7 @@ export default function RecuperarSenha() {
 
       <Input placeholder="Usuário ou E-mail..." />
 
-      <Button btnWidth='90%'>
+      <Button onPress={() => navigation.replace("VerificacaoEmail")} btnWidth='90%'>
         <ButtonTitle>Continuar</ButtonTitle>
       </Button>
     </Container>
