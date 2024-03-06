@@ -1,4 +1,3 @@
-import { View, Text } from "react-native";
 import React from "react";
 import { Container } from "../../components/Container/Style";
 import { Logo } from "../../components/Image/Style";
@@ -7,13 +6,13 @@ import { Title } from "../../components/Title/Style";
 import { HighlightedText, Subtitle } from "../../components/Subtitle/Style";
 import { InputNumber } from "../../components/Input/Style";
 import { InputNumberContainer } from "../../components/Container/Style";
-import { Button, ButtonLink, ButtonTitle } from "../../components/Button/Style";
+import { Button, ButtonTitle } from "../../components/Button/Style";
 import { LinkSecondary } from "../../components/Link/Style";
 
 export default function VerificacaoEmail({ navigation }) {
   return (
     <Container>
-      <ReturnButton iconName="close" />
+      <ReturnButton onPress={() => navigation.replace("Login")} iconName="close" />
 
       <Logo source={require("../../../src/assets/images/VitalHub_Logo.png")} />
 

@@ -36,7 +36,7 @@ const Consultas = [
   { id: 5, nome: "Carlos", situacao: "Canceladas" },
 ];
 
-export const ConsultasMedico = () => {
+export const ConsultasMedico = ({ navigation }) => {
   const [statusLista, setStatusLista] = useState("Pendentes");
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isCancelModalVisible, setIsCancelModalVisible] = useState(false);
@@ -67,6 +67,7 @@ export const ConsultasMedico = () => {
       <Header
         userImg={require("../../assets/images/doctorImg.png")}
         userName={"Dr. Claudio"}
+        navigation={navigation}
       />
 
       {/* Content Container */}
@@ -116,10 +117,10 @@ export const ConsultasMedico = () => {
         </ConsultListContainer>
       </ConsultasMedicoContainer>
 
-      <Footer
+      {/* <Footer
         activatedPage={activatedPage}
         activatePageFunction={activatePageFunction}
-      />
+      /> */}
 
       <ModalConfirmation
         isModalVisible={isCancelModalVisible}
@@ -133,6 +134,7 @@ export const ConsultasMedico = () => {
         patientName={"Niccole Sarga"}
         patientAge={"22 anos"}
         patientEmail={"niccole.sarga@gmail.com"}
+        navigation={navigation}
       />
     </Container>
   );

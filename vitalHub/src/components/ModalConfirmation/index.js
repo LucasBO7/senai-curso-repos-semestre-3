@@ -16,7 +16,7 @@ export const ModalConfirmation = ({ isModalVisible, cancelModalFunction }) => {
           horário, deseja mesmo cancelar essa consulta?
         </Subtitle>
 
-        <Button btnWidth='90%'>
+        <Button onPress={cancelModalFunction} btnWidth='90%'>
           <ButtonTitle>Confirmar</ButtonTitle>
         </Button>
 

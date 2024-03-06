@@ -6,7 +6,7 @@ import { DoctorCard } from "../../components/DoctorCard";
 import { Button, ButtonTitle } from "../../components/Button/Style";
 import { LinkSecondary } from "../../components/Link/Style";
 
-export const DoctorSelection = () => {
+export const DoctorSelection = ({ navigation }) => {
   const doctors = [
     {
       id: 0,
@@ -69,7 +69,7 @@ export const DoctorSelection = () => {
         </CardsList>
       </SafeAreaView>
 
-      <Button btnWidth="90%">
+      <Button onPress={() => navigation.navigate("ConsultDateSelection")} btnWidth="90%">
         <ButtonTitle>Continuar</ButtonTitle>
       </Button>
 

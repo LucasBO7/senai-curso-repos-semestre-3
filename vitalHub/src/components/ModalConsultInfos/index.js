@@ -38,7 +38,7 @@ export const ModalConsultInfos = ({
           btnWidth="90%"
           title="Login"
           onPress={() => {
-            navigation.navigate("Login");
+            navigation.navigate("LocalConsulta");
           }}
         >
           <ButtonTitle>Ver local da consulta</ButtonTitle>

@@ -7,6 +7,7 @@ import Perfil from '../Perfil/Perfil';
 import { ContentIcon, TextIcon } from './Style';
 
 import { FontAwesome, FontAwesome5 } from '@expo/vector-icons';
+import { ConsultasPaciente } from '../ConsultasPaciente/ConsultasPaciente';
 
 const BottomTab = createBottomTabNavigator();
 
@@ -62,9 +63,13 @@ export const Main = () => {
             })}
         >
 
-            <BottomTab.Screen
+            {/* <BottomTab.Screen
                 name='Home'
                 component={ConsultasMedico}
+            /> */}
+            <BottomTab.Screen
+                name='Home'
+                component={ConsultasPaciente}
             />
 
             <BottomTab.Screen

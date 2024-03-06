@@ -9,6 +9,7 @@ import { LinkSecondary } from "../../components/Link/Style";
 import { PerfilInput } from "../../components/PerfilInput";
 import { ImgSubmitButton } from "../../components/ImgSubmitButton";
 import { Input } from "../../components/PerfilInput/Style";
+import { FileInput } from "../../components/FileInput";
 
 export const VisualizarPrescricao = ({ cancelModalFunction }) => {
   return (
@@ -35,9 +36,7 @@ export const VisualizarPrescricao = ({ cancelModalFunction }) => {
           inputPlaceholder="Prescrição médica..."
           containerWidth="90%"
         />
-        <FileInputContainer>
-          
-        </FileInputContainer>
+        <FileInput />
         {/* <PerfilInput
           inputLabel="Exames médicos"
           inputPlaceholder="Prescrição médica..."

@@ -1,6 +1,6 @@
-import styled from "styled-components";
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { PerfilEmail } from "../Title/Style";
+import { FileContent, FileInputContainer } from './Style';
 
 export const FileInput = () => {
     return (

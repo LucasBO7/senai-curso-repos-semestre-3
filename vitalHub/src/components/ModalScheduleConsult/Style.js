@@ -12,7 +12,7 @@ export const ModalContainer = styled(Modal).attrs({
 `;
 export const ModalContent = styled.View`
     background-color: white;
-    border-radius: 10px;
+    border-radius: 10px 10px 0px 0px;
     width: 100%;
     height: 430px;
     padding: 28px 20px;

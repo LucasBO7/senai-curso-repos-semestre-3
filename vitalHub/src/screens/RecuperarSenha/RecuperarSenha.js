@@ -10,7 +10,7 @@ import { ReturnButton } from "../../components/ReturnButton/index";
 export default function RecuperarSenha({ navigation }) {
   return (
     <Container>
-      <ReturnButton iconName="arrowleft" />
+      <ReturnButton onPress={() => navigation.replace("Login")} iconName="arrowleft" />
 
       <Logo source={require("../../../src/assets/images/VitalHub_Logo.png")} />
 

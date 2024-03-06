@@ -6,7 +6,7 @@ import { ConsultInfosContainer, InfosGroup } from './Style'
 import { Button, ButtonTitle } from '../Button/Style'
 import { LinkSecondary } from '../Link/Style'
 
-export const ModalAppointmentConfirmation = ({ consult, isVisible, cancelModalFunction }) => {
+export const ModalAppointmentConfirmation = ({ navigation, consult, isVisible, cancelModalFunction }) => {
   return (
     <ModalContainer isVisible={isVisible}>
       <ModalConfirmationContainer containerHeight='580px'>
@@ -36,10 +36,10 @@ export const ModalAppointmentConfirmation = ({ consult, isVisible, cancelModalFu
           </InfosGroup>
 
           {/* Buttons */}
-          <Button btnWidth="100%">
+          <Button onPress={() => navigation.replace("ConsultasPaciente")} btnWidth="100%">
             <ButtonTitle>Confirmar</ButtonTitle>
           </Button>
-          <LinkSecondary onPress={cancelModalFunction}>Cancelar</LinkSecondary>
+          <LinkSecondary onPress={() => navigation.replace("ConsultasPaciente")}>Cancelar</LinkSecondary>
         </ConsultInfosContainer>
 
       </ModalConfirmationContainer>

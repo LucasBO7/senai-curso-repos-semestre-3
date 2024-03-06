@@ -7,7 +7,7 @@ import { FlatList, SafeAreaView, ScrollView } from "react-native";
 import { Button, ButtonTitle } from "../../components/Button/Style";
 import { LinkSecondary } from "../../components/Link/Style";
 
-export const ClinicSelection = () => {
+export const ClinicSelection = ({ navigation }) => {
   const clinics = [
     {
       id: 0,
@@ -53,7 +53,7 @@ export const ClinicSelection = () => {
     },
   ];
   // const [isCardSelected, setIsCardSelected] = useState(false);
-  const [selectedCardId, setSelectedCardId] = useState(0);
+  const [selectedCardId, setSelectedCardId] = useState();
 
   const handleSelectedCard = (id) => {
     setSelectedCardId(id);
@@ -83,7 +83,7 @@ export const ClinicSelection = () => {
         </CardsList>
       </SafeAreaView>
 
-      <Button btnWidth="90%">
+      <Button onPress={() => navigation.navigate("DoctorSelection")} btnWidth="90%">
         <ButtonTitle>Continuar</ButtonTitle>
       </Button>
 

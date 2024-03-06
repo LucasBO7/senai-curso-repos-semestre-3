@@ -14,18 +14,18 @@ import { Button, ButtonTitle } from "../../components/Button/Style";
 export default function RedefinicaoSenha({ navigation }) {
   return (
     <Container>
-      <ReturnButton iconName="close" />
+      <ReturnButton onPress={() => navigation.replace("Login")} iconName="close" />
 
       <Logo source={require("../../../src/assets/images/VitalHub_Logo.png")} />
 
-      <Title>Verifique seu e-mail</Title>
+      <Title>Redefinir senha</Title>
       <Subtitle>Insira e confirme a sua nova senha</Subtitle>
 
       <Input placeholder="Nova senha" />
       <Input placeholder="Confirmar nova senha" />
 
       <Button btnWidth='90%'>
-        <ButtonTitle onPress={() => navigation.replace("CadastroConta")}>Confirmar nova senha</ButtonTitle>
+        <ButtonTitle onPress={() => navigation.replace("Login")}>Confirmar nova senha</ButtonTitle>
       </Button>
     </Container>
   );

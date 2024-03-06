@@ -3,17 +3,14 @@ import React from "react";
 import { Container } from "../../components/Container/Style";
 import { Title } from "../../components/Title/Style";
 import { Subtitle } from "../../components/Subtitle/Style";
-import { ReturnButton } from "../../components/ReturnButton";
 import { Logo } from "../../components/Image/Style";
 import { Button, ButtonTitle } from "../../components/Button/Style";
 import { LinkSecondary } from "../../components/Link/Style";
 import { Input } from "../../components/Input/Style";
 
-export default function CadastroConta() {
+export default function CadastroConta({ navigation }) {
   return (
     <Container>
-      <ReturnButton iconName="close" />
-
       <Logo source={require("../../../src/assets/images/VitalHub_Logo.png")} />
 
       <Title>Criar conta</Title>
@@ -26,11 +23,11 @@ export default function CadastroConta() {
       <Input placeholder="Senha" />
       <Input placeholder="Confirmar Senha" />
 
-      <Button btnWidth='90%'>
+      <Button onPress={() => navigation.replace("Login")} btnWidth='90%'>
         <ButtonTitle>Cadastrar</ButtonTitle>
       </Button>
 
-      <LinkSecondary>Cancelar</LinkSecondary>
+      <LinkSecondary onPress={() => navigation.replace("Login")}>Cancelar</LinkSecondary>
     </Container>
   );
 }

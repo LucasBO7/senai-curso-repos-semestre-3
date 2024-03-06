@@ -6,6 +6,7 @@ import { Button, ButtonTitle } from '../Button/Style'
 import { LinkSecondary } from '../Link/Style'
 
 export const ModalScheduleConsult = ({
+    navigation,
     isModalVisible,
     setIsModalVisible,
     selectedButton = '',
@@ -52,7 +53,7 @@ export const ModalScheduleConsult = ({
                     <InputTag placeholder="Informe a localização" />
                 </TextInput>
 
-                <Button btnWidth='100%'>
+                <Button onPress={() => navigation.navigate("ClinicSelection")} btnWidth='100%'>
                     <ButtonTitle>Continuar</ButtonTitle>
                 </Button>
 

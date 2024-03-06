@@ -27,7 +27,7 @@ const Consultas = [
   { id: 5, nome: "Carlos", situacao: "Canceladas" },
 ];
 
-export const ConsultasPaciente = () => {
+export const ConsultasPaciente = ({ navigation }) => {
   const [statusLista, setStatusLista] = useState("Pendentes");
 
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -67,6 +67,7 @@ export const ConsultasPaciente = () => {
       <Header
         userImg={require("../../assets/images/userPerfilImg.png")}
         userName={"Cláudio José"}
+        navigation={navigation}
       />
 
       {/* Content Container */}
@@ -118,12 +119,13 @@ export const ConsultasPaciente = () => {
         <ScheduleConsultButton onPressBtn={toggleScheduleConsultModal} />
       </ConsultasMedicoContainer>
 
-      <Footer
+      {/* <Footer
         activatedPage={activatedPage}
         activatePageFunction={activatePageFunction}
-      />
+      /> */}
 
       <ModalScheduleConsult
+        navigation={navigation}
         isModalVisible={isScheduleConsultModalVisible}
         setIsModalVisible={setIsScheduleConsultModalVisible}
         selectedButton={selectedButton}

@@ -110,3 +110,14 @@ export const ClinicInfosContainer = styled.View`
   padding: 30px 20px;
   border-radius: 15px 15px 0px 0px;
 `;
+
+export const ConsultDateContainer = styled.View`
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  height: 100%;
+  
+  padding-left: 5%;
+  padding-right: 5%;
+`;

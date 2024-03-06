@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ReturnButtonContainer = styled.View`
+export const ReturnButtonContainer = styled.TouchableOpacity`
   background-color: rgba(73, 179, 189, 0.15);
   width: 50px;
   height: 50px;

@@ -7,7 +7,7 @@ import { ProntuarioInput } from '../../components/ProntuarioInput'
 import { Button, ButtonSecondary, ButtonTitle } from '../../components/Button/Style'
 import { LinkSecondary } from '../../components/Link/Style'
 
-export const Prontuario = () => {
+export const Prontuario = ({ navigation }) => {
     return (
         // Scroll component
         <ScrollView>
@@ -54,7 +54,7 @@ export const Prontuario = () => {
                     <ButtonTitle>Editar</ButtonTitle>
                 </ButtonSecondary>
 
-                <LinkSecondary>Cancelar</LinkSecondary>
+                <LinkSecondary onPress={() => navigation.replace("ConsultasMedico")}>Cancelar</LinkSecondary>
 
             </Container>
         </ScrollView>

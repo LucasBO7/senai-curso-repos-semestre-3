@@ -10,7 +10,7 @@ import {
   WelcomeTitle,
 } from "./Style.js";
 
-export const Header = ({ userImg, userName }) => {
+export const Header = ({ userImg, userName, navigation }) => {
   return (
     <HeaderContainer>
       <HeaderContent>
@@ -20,7 +20,7 @@ export const Header = ({ userImg, userName }) => {
           alt="Profile Picture"
         />
 
-        <TitlesContainer>
+        <TitlesContainer onPress={() => navigation.navigate("Perfil")}>
           <WelcomeTitle>Bem vindo</WelcomeTitle>
           <UserNameTitle>{userName}</UserNameTitle>
         </TitlesContainer>

@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Container } from '../../components/Container/Style'
+import { ConsultDateContainer, Container } from '../../components/Container/Style'
 import { TitleSecondary } from '../../components/Title/Style'
 import { CalendarComponent } from '../../components/Calendar/CalendarComponent'
 import { TextInput } from '../../components/Input/Style'
@@ -9,7 +9,7 @@ import { LinkSecondary } from '../../components/Link/Style'
 import { Dropdown } from '../../components/Dropdown'
 import { ModalAppointmentConfirmation } from '../../components/ModalAppointmentConfirmation'
 
-export const ConsultDateSelection = () => {
+export const ConsultDateSelection = ({ navigation }) => {
     const consulta = {
         id: 0,
         date: "1 de Novembro de 2023",
@@ -30,28 +30,33 @@ export const ConsultDateSelection = () => {
 
     return (
         <Container>
-            <TitleSecondary>Selecionar data</TitleSecondary>
+            <ConsultDateContainer>
 
-            <CalendarComponent />
 
-            <TextInput>
-                <QuestionText>Selecione um horário disponível</QuestionText>
+                <TitleSecondary>Selecionar data</TitleSecondary>
 
-                <Dropdown />
-                {/* <InputTag placeholder="Informe a localização" /> */}
-            </TextInput>
+                <CalendarComponent />
 
-            <Button onPress={onModalVisibilityChange} btnWidth='90%'>
-                <ButtonTitle>Continuar</ButtonTitle>
-            </Button>
+                <TextInput>
+                    <QuestionText>Selecione um horário disponível</QuestionText>
 
-            <LinkSecondary>Cancelar</LinkSecondary>
+                    <Dropdown />
+                    {/* <InputTag placeholder="Informe a localização" /> */}
+                </TextInput>
 
-            <ModalAppointmentConfirmation
-                consult={consulta}
-                isVisible={isModalVisible}
-                cancelModalFunction={onModalVisibilityChange}
-            />
+                <Button onPress={onModalVisibilityChange} btnWidth='100%'>
+                    <ButtonTitle>Continuar</ButtonTitle>
+                </Button>
+
+                <LinkSecondary>Cancelar</LinkSecondary>
+
+                <ModalAppointmentConfirmation
+                    navigation={navigation}
+                    consult={consulta}
+                    isVisible={isModalVisible}
+                    cancelModalFunction={onModalVisibilityChange}
+                />
+            </ConsultDateContainer>
         </Container>
     )
 }

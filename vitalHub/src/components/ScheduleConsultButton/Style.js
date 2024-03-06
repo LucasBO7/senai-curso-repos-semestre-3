@@ -4,7 +4,7 @@ import { FontAwesome6 } from "@expo/vector-icons";
 export const ScheduleConsultButtonContainer = styled.TouchableOpacity`
   elevation: 3;
   position: absolute;
-  bottom: 0;
+  bottom: -50px;
   right: 0;
 
   justify-content: center;

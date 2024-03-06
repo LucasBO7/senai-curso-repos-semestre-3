@@ -33,7 +33,7 @@ export const UserImage = styled.Image`
 `;
 
 // (Titles Container)
-export const TitlesContainer = styled.View`
+export const TitlesContainer = styled.TouchableOpacity`
   width: 65.5%;
 `;
 // Titles -> welcome
