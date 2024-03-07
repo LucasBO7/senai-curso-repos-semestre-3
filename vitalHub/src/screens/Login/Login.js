@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "../../components/Container/Style";
 import { Logo } from "../../components/Image/Style";
 import { Title } from "../../components/Title/Style";
@@ -18,9 +18,10 @@ import {
 } from "../../components/Button/Style";
 
 export default function Login({ navigation }) {
+  const [insertedUser, setInsertedUser] = useState({ email: "paciente", password: "1234" });
 
   async function Login() {
-    navigation.navigate("Main");
+    navigation.navigate("Main", { paramKey: insertedUser });
   }
 
   return (
@@ -31,6 +32,8 @@ export default function Login({ navigation }) {
       <Title>Entrar ou criar conta</Title>
 
       <Input placeholder="Usuário ou E-mail..." />
+      {/* <Input placeholder="Usuário ou E-mail..." onChangeText={
+        insertedEmail => { setInsertedUser(...insertedUser, insertedUser.email = insertedEmail) }} /> */}
       <Input placeholder="Senha" />
 
       <LinkMedium onPress={() => navigation.replace("RecuperarSenha")}>Esqueceu sua senha?</LinkMedium>

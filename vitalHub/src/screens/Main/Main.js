@@ -11,7 +11,7 @@ import { ConsultasPaciente } from '../ConsultasPaciente/ConsultasPaciente';
 
 const BottomTab = createBottomTabNavigator();
 
-export const Main = () => {
+export const Main = ({ route }) => {
     return (
         <BottomTab.Navigator
             initialRouteName='Home'
@@ -62,20 +62,23 @@ export const Main = () => {
                 },
             })}
         >
-
-            {/* <BottomTab.Screen
-                name='Home'
-                component={ConsultasMedico}
-            /> */}
-            <BottomTab.Screen
-                name='Home'
-                component={ConsultasPaciente}
-            />
+            {route.params.paramKey.email == "paciente" ?
+                <BottomTab.Screen
+                    name='Home'
+                    component={ConsultasPaciente}
+                />
+                :
+                <BottomTab.Screen
+                    name='Home'
+                    component={ConsultasMedico}
+                />
+            }
 
             <BottomTab.Screen
                 name='Perfil'
                 component={Perfil}
             />
+
         </BottomTab.Navigator>
     );
 }

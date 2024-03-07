@@ -17,7 +17,7 @@ export const ModalScheduleConsult = ({
     }
 
     return (
-        <ModalContainer isVisible={isModalVisible}>
+        <ModalContainer isVisible={isModalVisible} animationOutTiming={0}>
             <ModalContent>
                 {/* Title */}
                 <TitleSecondary>Agendar consulta</TitleSecondary>
