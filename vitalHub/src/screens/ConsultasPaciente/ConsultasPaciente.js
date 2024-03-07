@@ -36,6 +36,7 @@ export const ConsultasPaciente = ({ navigation }) => {
     useState(false);
   const [activatedPage, setActivatedPage] = useState("agendadas");
   const [selectedButton, setSelectedButton] = useState("");
+  const [viewPrescription, setViewPrescription] = useState();
 
   const [patients, setPatients] = useState({
     id: 0,
@@ -102,6 +103,7 @@ export const ConsultasPaciente = ({ navigation }) => {
               if (statusLista == item.situacao) {
                 return (
                   <ConsultCard
+                    navigation={navigation}
                     situacao={item.situacao}
                     patient={patients}
                     openScreen="patient"
@@ -138,6 +140,7 @@ export const ConsultasPaciente = ({ navigation }) => {
       />
 
       <ModalConsultInfos
+        navigation={navigation}
         isModalVisible={isModalVisible}
         cancelModalFunction={toggleModal}
         imgSource={require("../../assets/images/doctorImg.png")}

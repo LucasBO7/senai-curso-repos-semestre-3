@@ -30,13 +30,12 @@ export const PerfilInfoContainer = styled.View`
   border-radius: 5px;
   align-items: center;
   justify-content: center;
-  shadowcolor: "#000";
+  shadowolor: "#000";
   shadowoffset: {
     width: 0;
     height: 2;
   }
   shadowopacity: 0.25;
-  shadowradius: 3.84;
   elevation: 5;
 `;
 
@@ -57,6 +56,10 @@ export const ConsultStatusContainer = styled.View`
 export const ConsultListContainer = styled.View`
   width: 100%;
   height: 100%;
+`;
+
+export const ConsultCardButtonArea = styled.TouchableOpacity`
+
 `;
 
 export const ConsultCardContainer = styled.View.attrs({

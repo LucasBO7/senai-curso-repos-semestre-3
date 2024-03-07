@@ -87,7 +87,7 @@ export const ClinicSelection = ({ navigation }) => {
         <ButtonTitle>Continuar</ButtonTitle>
       </Button>
 
-      <LinkSecondary>Cancelar</LinkSecondary>
+      <LinkSecondary onPress={() => navigation.navigate("ConsultasPaciente")}>Cancelar</LinkSecondary>
     </Container>
   );
 };

@@ -31,8 +31,6 @@ export const ConsultDateSelection = ({ navigation }) => {
     return (
         <Container>
             <ConsultDateContainer>
-
-
                 <TitleSecondary>Selecionar data</TitleSecondary>
 
                 <CalendarComponent />
@@ -48,7 +46,7 @@ export const ConsultDateSelection = ({ navigation }) => {
                     <ButtonTitle>Continuar</ButtonTitle>
                 </Button>
 
-                <LinkSecondary>Cancelar</LinkSecondary>
+                <LinkSecondary onPress={() => navigation.navigate("ConsultasPaciente")}>Cancelar</LinkSecondary>
 
                 <ModalAppointmentConfirmation
                     navigation={navigation}

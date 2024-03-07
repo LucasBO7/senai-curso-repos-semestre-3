@@ -11,7 +11,7 @@ import { ClinicLocalInfosTitle } from "../../components/Title/Style";
 
 import MapView, { Marker } from "react-native-maps";
 
-export const LocalConsulta = () => {
+export const LocalConsulta = ({ navigation }) => {
   return (
     <Container>
       <LocalMap source={require("../../assets/images/map-local.png")} />
@@ -54,7 +54,7 @@ export const LocalConsulta = () => {
             containerWidth="40%"
           />
         </PerfilCityInputsContainer>
-        <LinkSecondary>Voltar</LinkSecondary>
+        <LinkSecondary onPress={() => navigation.navigate("ConsultasPaciente")}>Voltar</LinkSecondary>
       </ClinicInfosContainer>
     </Container >
   );

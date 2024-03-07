@@ -11,7 +11,7 @@ import { ImgSubmitButton } from "../../components/ImgSubmitButton";
 import { Input } from "../../components/PerfilInput/Style";
 import { FileInput } from "../../components/FileInput";
 
-export const VisualizarPrescricao = ({ cancelModalFunction }) => {
+export const VisualizarPrescricao = ({ navigation }) => {
   return (
     <ScrollView>
       <Container>
@@ -51,7 +51,7 @@ export const VisualizarPrescricao = ({ cancelModalFunction }) => {
           width="90%"
         />
 
-        <LinkSecondary onPress={cancelModalFunction}>Voltar</LinkSecondary>
+        <LinkSecondary onPress={() => { navigation.replace("ConsultasPaciente") }}>Voltar</LinkSecondary>
       </Container>
     </ScrollView>
   );

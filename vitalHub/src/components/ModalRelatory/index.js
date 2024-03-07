@@ -36,10 +36,10 @@ export const ModalRelatory = ({
           btnWidth="90%"
           title="Login"
           onPress={() => {
-            navigation.navigate("VisualizarPrescricao");
+            navigation.navigate("Prontuario");
           }}
         >
-          <ButtonTitle onPress={() => navigation.replace("Prontuario")}>Inserir prontuário</ButtonTitle>
+          <ButtonTitle>Inserir prontuário</ButtonTitle>
         </Button>
 
         <LinkSecondary onPress={cancelModalFunction}>Cancelar</LinkSecondary>

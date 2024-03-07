@@ -39,7 +39,7 @@ export const ModalAppointmentConfirmation = ({ navigation, consult, isVisible, c
           <Button onPress={() => navigation.replace("ConsultasPaciente")} btnWidth="100%">
             <ButtonTitle>Confirmar</ButtonTitle>
           </Button>
-          <LinkSecondary onPress={() => navigation.replace("ConsultasPaciente")}>Cancelar</LinkSecondary>
+          <LinkSecondary onPress={() => cancelModalFunction()}>Cancelar</LinkSecondary>
         </ConsultInfosContainer>
 
       </ModalConfirmationContainer>
