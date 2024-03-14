@@ -11,7 +11,20 @@ import { ImgSubmitButton } from "../../components/ImgSubmitButton";
 import { Input } from "../../components/PerfilInput/Style";
 import { FileInput } from "../../components/FileInput";
 
+import { useEffect, useRef, useState } from 'react';
+
 export const VisualizarPrescricao = ({ navigation }) => {
+
+  useEffect(() => {
+    // Permissões de acesso de funções do dispositivo
+    (async () => {
+      // Câmera
+      const { status: cameraStatus } = await Camera.requestCameraPermissionsAsync();
+
+      const { status: mediaStatus } = await MediaLibrary.requestPermissionsAsync();
+    })();
+  }, []
+
   return (
     <ScrollView>
       <Container>
@@ -43,7 +56,9 @@ export const VisualizarPrescricao = ({ navigation }) => {
           containerWidth="90%"
           inputType={"file"}
         /> */}
-        <ImgSubmitButton />
+        <ImgSubmitButton
+          navigation={navigation}
+        />
 
         <Input
           placeholder="Resultado do exame"
