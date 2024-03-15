@@ -8,27 +8,16 @@ import {
 } from "./Style";
 
 
-export const ImgSubmitButton = ({ navigation }) => {
+export const ImgSubmitButton = ({ changeCameraScreenVisibility }) => {
   return (
     <ContainerButtons>
-      <ButtonSubmit onPress={() => { navigation.navigate("Camera") }}>
+      <ButtonSubmit onPress={() => { changeCameraScreenVisibility() }}>
         <MaterialCommunityIcons name="camera-plus" size={24} color="white" />
         <TextBtt>Exames médicos</TextBtt>
       </ButtonSubmit>
       <ButtonCancel>
         <TextBttCancel>Cancelar</TextBttCancel>
       </ButtonCancel>
-
-      {/* <Modal animationType='slide' transparent={false} visible={openModel}>
-        <Camera
-          ref={cameraRef}
-          ratio="16:9"
-          type={tipoCamera}
-          flashMode={flashLight}
-        >
-          <Image style={{ width: '100%', height: 500, borderRadius: 15 }} source={{ uri: photo }} />
-        </Camera>
-      </Modal> */}
     </ContainerButtons>
   );
 };

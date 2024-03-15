@@ -18,7 +18,7 @@ export default function App() {
   const [openModel, setOpenModal] = useState(false);
   const [tipoCamera, setTipoCamera] = useState(CameraType.front);
   const [photo, setPhoto] = useState(null);
-  const [flashLight, setFlashLight] = useState(FlashMode.off);
+  const [flashLight, setFlashLight] = useState(Camera.Constants.FlashMode.off);
 
   useEffect(() => {
     // Permissões de acesso de funções do dispositivo

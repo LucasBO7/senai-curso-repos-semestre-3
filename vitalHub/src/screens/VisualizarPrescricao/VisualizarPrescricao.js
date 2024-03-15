@@ -12,62 +12,67 @@ import { Input } from "../../components/PerfilInput/Style";
 import { FileInput } from "../../components/FileInput";
 
 import { useEffect, useRef, useState } from 'react';
+import { Camera } from "expo-camera";
+import { CameraScreen } from "../Camera";
 
 export const VisualizarPrescricao = ({ navigation }) => {
+  const [capturedPhotoUri, setCapturedPhotoUri] = useState();
+  const [isCameraScreenVisible, setIsCameraScreenVisible] = useState(false);
 
-  useEffect(() => {
-    // Permissões de acesso de funções do dispositivo
-    (async () => {
-      // Câmera
-      const { status: cameraStatus } = await Camera.requestCameraPermissionsAsync();
+  const saveCapturedPhotoUri = ({ photoUri }) => {
+    setCapturedPhotoUri(photoUri);
+  }
 
-      const { status: mediaStatus } = await MediaLibrary.requestPermissionsAsync();
-    })();
-  }, []
+  const changeCameraScreenVisibility = () => {
+    setIsCameraScreenVisible(isCameraScreenVisible ? setIsCameraScreenVisible(false) : setIsCameraScreenVisible(true));
+  }
 
   return (
-    <ScrollView>
-      <Container>
-        <PerfilImage source={require("../../assets/images/perfil-img.png")} />
-        <PerfilInfoContainer>
-          <PerfilName>Dr. Claudio</PerfilName>
-          <PerfilEmail>Cliníco geral</PerfilEmail>
-          <PerfilEmail>CRM-15286</PerfilEmail>
-        </PerfilInfoContainer>
-        <PerfilInput
-          inputLabel="Descrição da consulta"
-          inputPlaceholder="Descreva a consulta..."
-          containerWidth="90%"
-        />
-        <PerfilInput
-          inputLabel="Diagnóstico do paciente"
-          inputPlaceholder="Diagnóstico do paciente..."
-          containerWidth="90%"
-        />
-        <PerfilInput
-          inputLabel="Prescrição médica"
-          inputPlaceholder="Prescrição médica..."
-          containerWidth="90%"
-        />
-        <FileInput />
-        {/* <PerfilInput
-          inputLabel="Exames médicos"
-          inputPlaceholder="Prescrição médica..."
-          containerWidth="90%"
-          inputType={"file"}
-        /> */}
-        <ImgSubmitButton
-          navigation={navigation}
-        />
+    <>
+      {isCameraScreenVisible ?
+        (
+          <CameraScreen navigation={navigation} saveCapturedPhotoUri={saveCapturedPhotoUri} />
+        ) : (
+          <ScrollView>
+            <Container>
+              <PerfilImage source={require("../../assets/images/perfil-img.png")} />
+              <PerfilInfoContainer>
+                <PerfilName>Dr. Claudio</PerfilName>
+                <PerfilEmail>Cliníco geral</PerfilEmail>
+                <PerfilEmail>CRM-15286</PerfilEmail>
+              </PerfilInfoContainer>
+              <PerfilInput
+                inputLabel="Descrição da consulta"
+                inputPlaceholder="Descreva a consulta..."
+                containerWidth="90%"
+              />
+              <PerfilInput
+                inputLabel="Diagnóstico do paciente"
+                inputPlaceholder="Diagnóstico do paciente..."
+                containerWidth="90%"
+              />
+              <PerfilInput
+                inputLabel="Prescrição médica"
+                inputPlaceholder="Prescrição médica..."
+                containerWidth="90%"
+              />
+              <FileInput photoUri={capturedPhotoUri} />
+              
+              <ImgSubmitButton
+                changeCameraScreenVisibility={changeCameraScreenVisibility}
+              />
 
-        <Input
-          placeholder="Resultado do exame"
-          value="Resultado do exame de sangue: tudo normal"
-          width="90%"
-        />
+              <Input
+                placeholder="Resultado do exame"
+                value="Resultado do exame de sangue: tudo normal"
+                width="90%"
+              />
 
-        <LinkSecondary onPress={() => { navigation.replace("ConsultasPaciente") }}>Voltar</LinkSecondary>
-      </Container>
-    </ScrollView>
+              <LinkSecondary onPress={() => { navigation.replace("ConsultasPaciente") }}>Voltar</LinkSecondary>
+            </Container>
+          </ScrollView>
+        )
+      }
+    </>
   );
 };
