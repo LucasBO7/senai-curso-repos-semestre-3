@@ -11,7 +11,7 @@ import { ImgSubmitButton } from "../../components/ImgSubmitButton";
 import { Input } from "../../components/PerfilInput/Style";
 import { FileInput } from "../../components/FileInput";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 import { Camera } from "expo-camera";
 import { CameraScreen } from "../Camera";
 
@@ -19,60 +19,79 @@ export const VisualizarPrescricao = ({ navigation }) => {
   const [capturedPhotoUri, setCapturedPhotoUri] = useState();
   const [isCameraScreenVisible, setIsCameraScreenVisible] = useState(false);
 
-  const saveCapturedPhotoUri = ({ photoUri }) => {
+  function saveCapturedPhotoUri({ photoUri }) {
     setCapturedPhotoUri(photoUri);
   }
 
   const changeCameraScreenVisibility = () => {
-    setIsCameraScreenVisible(isCameraScreenVisible ? setIsCameraScreenVisible(false) : setIsCameraScreenVisible(true));
-  }
+    setIsCameraScreenVisible(
+      isCameraScreenVisible
+        ? setIsCameraScreenVisible(false)
+        : setIsCameraScreenVisible(true)
+    );
+    console.log("FOI!!");
+    console.log(isCameraScreenVisible);
+  };
 
   return (
-    <>
-      {isCameraScreenVisible ?
-        (
-          <CameraScreen navigation={navigation} saveCapturedPhotoUri={saveCapturedPhotoUri} />
-        ) : (
-          <ScrollView>
-            <Container>
-              <PerfilImage source={require("../../assets/images/perfil-img.png")} />
-              <PerfilInfoContainer>
-                <PerfilName>Dr. Claudio</PerfilName>
-                <PerfilEmail>Cliníco geral</PerfilEmail>
-                <PerfilEmail>CRM-15286</PerfilEmail>
-              </PerfilInfoContainer>
-              <PerfilInput
-                inputLabel="Descrição da consulta"
-                inputPlaceholder="Descreva a consulta..."
-                containerWidth="90%"
-              />
-              <PerfilInput
-                inputLabel="Diagnóstico do paciente"
-                inputPlaceholder="Diagnóstico do paciente..."
-                containerWidth="90%"
-              />
-              <PerfilInput
-                inputLabel="Prescrição médica"
-                inputPlaceholder="Prescrição médica..."
-                containerWidth="90%"
-              />
-              <FileInput photoUri={capturedPhotoUri} />
-              
-              <ImgSubmitButton
-                changeCameraScreenVisibility={changeCameraScreenVisibility}
-              />
+    // <>
+    <ScrollView>
+      <Container>
+        <PerfilImage source={require("../../assets/images/perfil-img.png")} />
+        <PerfilInfoContainer>
+          <PerfilName>Dr. Claudio</PerfilName>
+          <PerfilEmail>Cliníco geral</PerfilEmail>
+          <PerfilEmail>CRM-15286</PerfilEmail>
+        </PerfilInfoContainer>
+        <PerfilInput
+          inputLabel="Descrição da consulta"
+          inputPlaceholder="Descreva a consulta..."
+          containerWidth="90%"
+        />
+        <PerfilInput
+          inputLabel="Diagnóstico do paciente"
+          inputPlaceholder="Diagnóstico do paciente..."
+          containerWidth="90%"
+        />
+        <PerfilInput
+          inputLabel="Prescrição médica"
+          inputPlaceholder="Prescrição médica..."
+          containerWidth="90%"
+        />
+        <FileInput photoUri={capturedPhotoUri} />
 
-              <Input
-                placeholder="Resultado do exame"
-                value="Resultado do exame de sangue: tudo normal"
-                width="90%"
-              />
+        <ImgSubmitButton
+          changeCameraScreenVisibility={changeCameraScreenVisibility}
+        />
 
-              <LinkSecondary onPress={() => { navigation.replace("ConsultasPaciente") }}>Voltar</LinkSecondary>
-            </Container>
-          </ScrollView>
-        )
-      }
-    </>
+        <Input
+          placeholder="Resultado do exame"
+          value="Resultado do exame de sangue: tudo normal"
+          width="90%"
+        />
+
+        <LinkSecondary
+          onPress={() => {
+            navigation.replace("ConsultasPaciente");
+          }}
+        >
+          Voltar
+        </LinkSecondary>
+      </Container>
+
+      <CameraScreen
+        navigation={navigation}
+        saveCapturedPhotoUri={saveCapturedPhotoUri}
+        isVisible={isCameraScreenVisible}
+      />
+    </ScrollView>
+
+    // {isCameraScreenVisible ? (
+    // <CameraScreen
+    // navigation={navigation}
+    // saveCapturedPhotoUri={saveCapturedPhotoUri}
+    // />
+    // ) : null}
+    // </>
   );
 };

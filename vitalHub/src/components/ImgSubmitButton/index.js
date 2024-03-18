@@ -7,11 +7,14 @@ import {
   TextBttCancel,
 } from "./Style";
 
-
 export const ImgSubmitButton = ({ changeCameraScreenVisibility }) => {
   return (
     <ContainerButtons>
-      <ButtonSubmit onPress={() => { changeCameraScreenVisibility() }}>
+      <ButtonSubmit
+        onPress={() => {
+          changeCameraScreenVisibility(true);
+        }}
+      >
         <MaterialCommunityIcons name="camera-plus" size={24} color="white" />
         <TextBtt>Exames médicos</TextBtt>
       </ButtonSubmit>
