@@ -18,10 +18,7 @@ import { CameraScreen } from "../Camera";
 export const VisualizarPrescricao = ({ navigation }) => {
   const [capturedPhotoUri, setCapturedPhotoUri] = useState();
   const [isCameraScreenVisible, setIsCameraScreenVisible] = useState(false);
-
-  function saveCapturedPhotoUri({ photoUri }) {
-    setCapturedPhotoUri(photoUri);
-  }
+  const [saveCapturedPhotoUri, setSaveCapturedPhotoUri] = useState(null);
 
   const changeCameraScreenVisibility = () => {
     setIsCameraScreenVisible(
@@ -58,7 +55,7 @@ export const VisualizarPrescricao = ({ navigation }) => {
           inputPlaceholder="Prescrição médica..."
           containerWidth="90%"
         />
-        <FileInput photoUri={capturedPhotoUri} />
+        <FileInput saveCapturedPhotoUri={saveCapturedPhotoUri} />
 
         <ImgSubmitButton
           changeCameraScreenVisibility={changeCameraScreenVisibility}
@@ -81,8 +78,9 @@ export const VisualizarPrescricao = ({ navigation }) => {
 
       <CameraScreen
         navigation={navigation}
-        saveCapturedPhotoUri={saveCapturedPhotoUri}
-        isVisible={isCameraScreenVisible}
+        visible={isCameraScreenVisible}
+        setSaveCapturedPhotoUri={setSaveCapturedPhotoUri}
+        setIsCameraScreenVisible={setIsCameraScreenVisible}
       />
     </ScrollView>
 

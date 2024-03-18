@@ -39,7 +39,8 @@
     "react-native-web": "~0.19.6",
     "styled-components": "^6.1.8",
     "expo-camera": "~14.1.1",
-    "expo-media-library": "~15.9.1"
+    "expo-media-library": "~15.9.1",
+    "expo-notifications": "~0.27.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0"

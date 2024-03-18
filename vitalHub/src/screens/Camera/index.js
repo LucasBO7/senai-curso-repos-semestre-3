@@ -16,11 +16,14 @@ import * as MediaLibrary from "expo-media-library";
 //#endregion
 
 import { FontAwesome } from "@expo/vector-icons";
+import { Button, ButtonTitle } from "../../components/Button/Style";
+import { LinkSecondary } from "../../components/Link/Style";
 
 export const CameraScreen = ({
   navigation,
-  saveCapturedPhotoUri,
-  isVisible,
+  visible,
+  setSaveCapturedPhotoUri,
+  setIsCameraScreenVisible,
 }) => {
   const cameraRef = useRef(null);
   const [openModel, setOpenModal] = useState(false);
@@ -49,19 +52,23 @@ export const CameraScreen = ({
       const photo = await cameraRef.current.takePictureAsync();
       setPhoto(photo.uri); // salva a foto
 
-      saveCapturedPhotoUri(photo); // envia para tela
-      console.log("Log: " + photo.uri);
+      console.log(photo.uri);
 
       setOpenModal(true); // abre modal com foto
     }
   }
 
   async function getImage() {
-    await saveCapturedPhotoUri(photo);
+    await setSaveCapturedPhotoUri(photo);
+    clear()
+  }
+
+  function clear() {
+    setIsCameraScreenVisible(false)
   }
 
   async function clearPhoto() {
-    deletePhoto();
+    // deletePhoto();
 
     setPhoto(null);
     setOpenModal(false);
@@ -83,18 +90,6 @@ export const CameraScreen = ({
     }
   }
 
-  async function uploadPhoto() {
-    await MediaLibrary.createAssetAsync(photo) // Salva a foto no dispositivo
-      .then(() => {
-        alert("Foto salva com sucesso");
-        navigation.replace("VisualizarPrescricao");
-      })
-      .catch((error) => {
-        alert("Não foi possível processar a foto");
-      });
-    isVisible = false;
-  }
-
   function onFlashClick() {
     setFlashLight(
       flashLight == Camera.Constants.FlashMode.off
@@ -106,7 +101,7 @@ export const CameraScreen = ({
 
   return (
     // <View style={styles.container}>
-    <Modal visible={isVisible} style={styles.container}>
+    <Modal visible={visible} style={styles.container}>
       <Camera
         ref={cameraRef}
         style={styles.camera}
@@ -138,21 +133,11 @@ export const CameraScreen = ({
               }}
             >
               <View style={{ margin: 10, flexDirection: "row", gap: 20 }}>
-                {/* Delete button */}
-                <TouchableOpacity
-                  style={styles.btnClear}
-                  onPress={() => clearPhoto()}
-                >
-                  <FontAwesome name="trash" size={23} color="gold" />
-                </TouchableOpacity>
+                <Button btnWidth='90%' onPress={() => getImage() && clearPhoto()}>
+                  <ButtonTitle>Confirmar</ButtonTitle>
+                </Button>
 
-                {/* Save button */}
-                <TouchableOpacity
-                  style={styles.btnUpload}
-                  onPress={() => getImage() && uploadPhoto()}
-                >
-                  <FontAwesome name="upload" size={23} color="gold" />
-                </TouchableOpacity>
+                <LinkSecondary onPress={() => clearPhoto()}>Cancelar</LinkSecondary>
               </View>
 
               <Image

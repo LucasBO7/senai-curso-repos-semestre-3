@@ -124,6 +124,7 @@ export const ConsultasMedico = ({ navigation }) => {
 
       <ModalConfirmation
         isModalVisible={isCancelModalVisible}
+        callNotification={null}
         cancelModalFunction={toggleCancelModal}
       />
 
