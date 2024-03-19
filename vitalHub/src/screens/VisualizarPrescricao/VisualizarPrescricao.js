@@ -83,13 +83,5 @@ export const VisualizarPrescricao = ({ navigation }) => {
         setIsCameraScreenVisible={setIsCameraScreenVisible}
       />
     </ScrollView>
-
-    // {isCameraScreenVisible ? (
-    // <CameraScreen
-    // navigation={navigation}
-    // saveCapturedPhotoUri={saveCapturedPhotoUri}
-    // />
-    // ) : null}
-    // </>
   );
 };

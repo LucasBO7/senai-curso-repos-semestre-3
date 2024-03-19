@@ -20,7 +20,6 @@ import { Button, ButtonTitle } from "../../components/Button/Style";
 import { LinkSecondary } from "../../components/Link/Style";
 
 export const CameraScreen = ({
-  navigation,
   visible,
   setSaveCapturedPhotoUri,
   setIsCameraScreenVisible,
@@ -109,7 +108,10 @@ export const CameraScreen = ({
         type={tipoCamera}
         flashMode={FlashMode.on}
       >
+        {/* Botões da Camera */}
         <View style={styles.viewFlip}>
+          
+          {/* Botão Trocar */}
           <TouchableOpacity
             style={styles.btnFlip}
             onPress={() => {
@@ -121,6 +123,23 @@ export const CameraScreen = ({
             }}
           >
             <Text style={styles.txtFlip}>Trocar</Text>
+          </TouchableOpacity>
+
+
+          {/* Botão Camera */}
+          <TouchableOpacity
+            style={styles.btnCapture}
+            onPress={() => capturePhoto()}
+          >
+            <FontAwesome name="camera" size={23} color="white" />
+          </TouchableOpacity>
+
+          {/* Botão Flash */}
+          <TouchableOpacity
+            style={styles.btnCapture}
+            onPress={() => onFlashClick()}
+          >
+            <FontAwesome name="flash" size={23} color="white" />
           </TouchableOpacity>
 
           <Modal animationType="slide" transparent={false} visible={openModel}>
@@ -148,20 +167,6 @@ export const CameraScreen = ({
           </Modal>
         </View>
       </Camera>
-
-      <TouchableOpacity
-        style={styles.btnCapture}
-        onPress={() => capturePhoto()}
-      >
-        <FontAwesome name="camera" size={23} color="white" />
-      </TouchableOpacity>
-
-      <TouchableOpacity
-        style={styles.btnCapture}
-        onPress={() => onFlashClick()}
-      >
-        <FontAwesome name="flash" size={23} color="white" />
-      </TouchableOpacity>
     </Modal>
     // </View>
   );
@@ -169,10 +174,12 @@ export const CameraScreen = ({
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+    height: "100%",
+    width: "80%",
   },
   camera: {
     flex: 1,
@@ -198,7 +205,10 @@ const styles = StyleSheet.create({
     padding: 20,
     margin: 20,
     borderRadius: 10,
-    backgroundColor: "#121212",
+
+    backgroundColor: "transparent",
+    width: 70,
+    height: 70,
 
     justifyContent: "center",
     alignItems: "center",

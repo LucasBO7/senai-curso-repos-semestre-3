@@ -74,27 +74,6 @@ export const ConsultasPaciente = ({ navigation }) => {
       : setIsCancelModalVisible(true);
   };
 
-  // Função para lidar com a chamada de notificação
-  const handleCallNotifications = async () => {
-
-    // obtém o status da permissão
-    const { status } = await Notifications.getPermissionsAsync();
-
-    if (status != "granted") {
-      alert("Você não deixou as notificações ativas");
-      return;
-    }
-
-    // agenda uma notificação
-    await Notifications.scheduleNotificationAsync({
-      content: {
-        title: "Consulta cancelada",
-        body: "Consulta cancelada com sucesso!",
-      },
-      trigger: null
-    });
-  }
-
   const toggleScheduleConsultModal = () => {
     isScheduleConsultModalVisible
       ? setIsScheduleConsultModalVisible(false)
@@ -163,11 +142,6 @@ export const ConsultasPaciente = ({ navigation }) => {
         <ScheduleConsultButton onPressBtn={toggleScheduleConsultModal} />
       </ConsultasMedicoContainer>
 
-      {/* <Footer
-        activatedPage={activatedPage}
-        activatePageFunction={activatePageFunction}
-      /> */}
-
       <ModalScheduleConsult
         navigation={navigation}
         isModalVisible={isScheduleConsultModalVisible}
@@ -178,7 +152,6 @@ export const ConsultasPaciente = ({ navigation }) => {
 
       <ModalConfirmation
         isModalVisible={isCancelModalVisible}
-        callNotification={handleCallNotifications}
         cancelModalFunction={toggleCancelModal}
       />
 
